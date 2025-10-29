@@ -1,0 +1,66 @@
+duration,error,language,license,transcript,video_url
+10,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] 0FbidXrY6so: nsig extraction failed: Some formats may be missing
+         n = MYVWxiKZgz2AmFu ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] 0FbidXrY6so: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] 0FbidXrY6so: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=0FbidXrY6so
+6,"yt-dlp failed: WARNING: [youtube] rJpIuIZom0Y: Signature extraction failed: Some formats may be missing
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] rJpIuIZom0Y: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] rJpIuIZom0Y: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: Postprocessing: WARNING: unable to obtain file audio codec with ffprobe",,,,https://www.youtube.com/watch?v=rJpIuIZom0Y
+16,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] yGjU_lenW3M: nsig extraction failed: Some formats may be missing
+         n = j7WUQqFT82gohtv ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] yGjU_lenW3M: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] yGjU_lenW3M: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=yGjU_lenW3M
+15,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] U0yfaZo35IQ: nsig extraction failed: Some formats may be missing
+         n = avUoa0FjmBtX316 ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] U0yfaZo35IQ: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] U0yfaZo35IQ: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=U0yfaZo35IQ
+20,"yt-dlp failed: WARNING: [youtube] NKWBVRI1bik: Some tv client https formats have been skipped as they are missing a url. YouTube may have enabled the SABR-only or Server-Side Ad Placement experiment for the current session. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] NKWBVRI1bik: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] NKWBVRI1bik: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: Postprocessing: WARNING: unable to obtain file audio codec with ffprobe",,,,https://www.youtube.com/watch?v=NKWBVRI1bik
+54,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] gkJGbpUb77g: nsig extraction failed: Some formats may be missing
+         n = vz202WTGXW5bU1r ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] gkJGbpUb77g: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] gkJGbpUb77g: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=gkJGbpUb77g
+20,"yt-dlp failed: WARNING: [youtube] FXhLXXgtJ-Y: Signature extraction failed: Some formats may be missing
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] FXhLXXgtJ-Y: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] FXhLXXgtJ-Y: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+ERROR: Postprocessing: WARNING: unable to obtain file audio codec with ffprobe",,,,https://www.youtube.com/watch?v=FXhLXXgtJ-Y
+49,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] 20kFPKvGCOY: nsig extraction failed: Some formats may be missing
+         n = Sun9Rb91D-rVAuH ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] 20kFPKvGCOY: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] 20kFPKvGCOY: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=20kFPKvGCOY
+35,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] rSZSt1MP2cM: nsig extraction failed: Some formats may be missing
+         n = 6h4l0-kXxk7dbW_ ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] rSZSt1MP2cM: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] rSZSt1MP2cM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=rSZSt1MP2cM
+36,"yt-dlp failed: WARNING: [youtube] Falling back to generic n function search
+         player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+WARNING: [youtube] bjXqzeltmcY: nsig extraction failed: Some formats may be missing
+         n = iU3mV7W0HanhHhI ; player = https://www.youtube.com/s/player/5cf6312f/player_ias.vflset/en_US/base.js
+         Please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube] bjXqzeltmcY: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] bjXqzeltmcY: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more",,,,https://www.youtube.com/watch?v=bjXqzeltmcY

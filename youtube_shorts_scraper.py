@@ -1,231 +1,121 @@
 #!/usr/bin/env python3
-"""
-YouTube Shorts metadata collector using the official YouTube Data API v3.
-
-Features
-- Searches for videos with the #Shorts tag and duration <= 60 seconds
-- Pulls details in batches and writes to CSV
-- Allows topic keywords and date filters
-- Safe for ToS if used only for metadata and public thumbnails
-
-Usage
-  1. Create a Google Cloud project and enable YouTube Data API v3
-  2. Create an API key and set YT_API_KEY environment variable or put it in --api-key
-  3. Run:
-     python youtube_shorts_scraper.py --queries "comedy" "pranks" --max-results 500 --region US
-"""
-
-import os
-import csv
-import time
-import math
-import argparse
-from datetime import datetime, timezone
-from typing import List, Dict, Any
-
+import os, csv, argparse, math, time
+from datetime import datetime, timedelta, timezone
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 
-ISO_8601_ZERO = "1970-01-01T00:00:00Z"
+COLUMNS = ["videoId","videoUrl","title","description","channelId","channelTitle","publishedAt",
+           "durationSeconds","viewCount","likeCount","commentCount","license","definition",
+           "madeForKids","tagsCount","hasShortsTag","isShortByTime","transcriptText"]
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Collect YouTube Shorts metadata into CSV")
-    p.add_argument("--api-key", type=str, default=os.getenv("YT_API_KEY", ""), help="YouTube Data API v3 key")
-    p.add_argument("--queries", nargs="+", required=True, help="Search queries or topics. Example: comedy pranks memes")
-    p.add_argument("--published-after", type=str, default="2023-10-01T00:00:00Z", help="Start date: include videos posted after Oct 1, 2023")
-    p.add_argument("--published-before", type=str, default="2024-10-01T00:00:00Z", help="End date: include videos posted before Oct 1, 2024")
-    p.add_argument("--region", type=str, default="US", help="Region code. Example US, GB, IN")
-    p.add_argument("--relevance-language", type=str, default=None, help="Language code. Example en")
-    p.add_argument("--max-results", type=int, default=1000, help="Target total results across all queries")
-    p.add_argument("--per-page", type=int, default=50, help="API page size up to 50")
-    p.add_argument("--sleep", type=float, default=0.2, help="Seconds to sleep between API calls")
-    p.add_argument("--out", type=str, default="youtube_shorts_metadata.csv", help="Output CSV path")
-    p.add_argument("--include-no-tag", action="store_true", help="Also include videos without #shorts tag if duration <= 60s")
+    p = argparse.ArgumentParser(description="Simple Shorts collector")
+    p.add_argument("--api-key", default=os.getenv("YT_API_KEY",""))
+    p.add_argument("--queries", nargs="+", required=True)
+    p.add_argument("--limit-rows", type=int, default=10)
+    p.add_argument("--cc-only", action="store_true")
+    p.add_argument("--out", default="shorts_simple.csv")
+    p.add_argument("--region", default="US")
     return p.parse_args()
 
-def iso_date_or_none(s: str):
-    if not s:
-        return None
-    if len(s) == 10:
-        return s + "T00:00:00Z"
+def last_year_iso():
+    now = datetime.now(timezone.utc)
+    return (now - timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ"), now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+def dur_to_sec(iso):
+    total=n=""; s=0
+    for c in iso:
+        if c.isdigit(): n+=c
+        elif c=="H" and n: s+=int(n)*3600; n=""
+        elif c=="M" and n: s+=int(n)*60;   n=""
+        elif c=="S" and n: s+=int(n);      n=""
     return s
 
-def duration_to_seconds(iso_duration: str) -> int:
-    # ISO 8601 duration like PT53S or PT1M2S
-    total = 0
-    num = ""
-    in_time = False
-    for c in iso_duration:
-        if c.isdigit():
-            num += c
-            continue
-        if c == "T":
-            in_time = True
-            continue
-        if c in ("H","M","S"):
-            if not num:
-                continue
-            val = int(num)
-            if c == "H":
-                total += val * 3600
-            elif c == "M":
-                total += val * 60
-            elif c == "S":
-                total += val
-            num = ""
-    return total
+def try_transcript(vid):
+    try:
+        t = YouTubeTranscriptApi.get_transcript(vid)
+        return " ".join(seg.get("text","") for seg in t).strip()
+    except (TranscriptsDisabled, NoTranscriptFound):
+        try:
+            for tr in YouTubeTranscriptApi.list_transcripts(vid):
+                try:
+                    text = " ".join(seg.get("text","") for seg in tr.fetch()).strip()
+                    if text: return text
+                except: pass
+        except: pass
+    except: pass
+    return ""
 
-def search_shorts(service, query: str, opts) -> List[str]:
-    """Return a list of video IDs that look like Shorts for a given query."""
-    ids = []
-    next_page = None
-    fetched = 0
-    target = math.ceil(opts.max_results / max(1, len(opts.queries)))
-    published_after = iso_date_or_none(opts.published_after)
-    published_before = iso_date_or_none(opts.published_before) or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
+def search_ids(svc, q, after, before, region, target):
+    ids=[]; tok=None
     while True:
         try:
-            req = service.search().list(
-                part="id,snippet",
-                q=query + " #shorts",
-                type="video",
-                maxResults=min(opts.per_page, 50),
-                order="date",
-                regionCode=opts.region,
-                videoDuration="short",  # <4 minutes
-                publishedAfter=published_after,
-                publishedBefore=published_before,
-                relevanceLanguage=opts.relevance_language
-            )
-            if next_page:
-                req = req.execute
-                data = req(pageToken=next_page)
-            else:
-                data = req.execute()
-        except TypeError:
-            # Handle slightly different calling styles in googleapiclient
-            req = service.search().list(
-                part="id,snippet",
-                q=query + " #shorts",
-                type="video",
-                maxResults=min(opts.per_page, 50),
-                order="date",
-                regionCode=opts.region,
-                videoDuration="short",
-                publishedAfter=published_after,
-                publishedBefore=published_before,
-                relevanceLanguage=opts.relevance_language,
-                pageToken=next_page or None
-            )
-            data = req.execute()
+            params=dict(part="id,snippet", q=q+" #shorts", type="video", maxResults=50,
+                        order="date", regionCode=region, videoDuration="short",
+                        publishedAfter=after, publishedBefore=before)
+            if tok: params["pageToken"]=tok
+            data=svc.search().list(**params).execute()
         except HttpError as e:
-            print("HTTP error during search:", e)
-            break
+            print("Search error:", e); break
+        for it in data.get("items",[]):
+            ids.append(it["id"]["videoId"])
+            if len(ids)>=target: return ids
+        tok=data.get("nextPageToken")
+        if not tok: return ids
+        time.sleep(0.2)
 
-        for item in data.get("items", []):
-            vid = item["id"]["videoId"]
-            ids.append(vid)
-            fetched += 1
-            if fetched >= target:
-                break
-
-        next_page = data.get("nextPageToken")
-        if fetched >= target or not next_page:
-            break
-        time.sleep(opts.sleep)
-    return ids
-
-def fetch_details(service, video_ids: List[str]) -> List[Dict[str, Any]]:
-    rows = []
-    for i in range(0, len(video_ids), 50):
-        batch = video_ids[i:i+50]
-        try:
-            resp = service.videos().list(
-                part="snippet,contentDetails,statistics,status",
-                id=",".join(batch)
-            ).execute()
-        except HttpError as e:
-            print("HTTP error during videos.list:", e)
-            continue
-
-        for v in resp.get("items", []):
-            snippet = v.get("snippet", {})
-            details = v.get("contentDetails", {})
-            stats = v.get("statistics", {})
-            status = v.get("status", {})
-
-            title = snippet.get("title", "")
-            desc = snippet.get("description", "") or ""
-            duration_iso = details.get("duration", "PT0S")
-            seconds = duration_to_seconds(duration_iso)
-
-            # Heuristic flags
-            has_shorts_tag = "#shorts" in (title + " " + desc).lower()
-            is_short_by_time = seconds <= 60
-            is_short = is_short_by_time and (has_shorts_tag or INCLUDE_NO_TAG_GLOBAL)
-
-            if not is_short:
-                continue
-
-            rows.append({
-                "videoId": v.get("id"),
-                "title": title,
-                "channelId": snippet.get("channelId"),
-                "channelTitle": snippet.get("channelTitle"),
-                "publishedAt": snippet.get("publishedAt"),
-                "durationSeconds": seconds,
-                "viewCount": stats.get("viewCount"),
-                "likeCount": stats.get("likeCount"),
-                "commentCount": stats.get("commentCount"),
-                "definition": details.get("definition"),
-                "licensedContent": details.get("licensedContent"),
-                "license": status.get("license"),
-                "madeForKids": status.get("madeForKids"),
-                "tagsCount": len(snippet.get("tags", [])) if snippet.get("tags") else 0,
-                "hasShortsTag": has_shorts_tag,
-                "isShortByTime": is_short_by_time,
-                "thumbnailDefault": snippet.get("thumbnails", {}).get("default", {}).get("url"),
-                "thumbnailMedium": snippet.get("thumbnails", {}).get("medium", {}).get("url"),
-                "thumbnailHigh": snippet.get("thumbnails", {}).get("high", {}).get("url"),
-            })
-        time.sleep(0.1)
-    return rows
-
-def write_csv(path: str, rows: List[Dict[str, Any]]):
-    if not rows:
-        print("No rows to write")
-        return
-    fieldnames = list(rows[0].keys())
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        w.writeheader()
-        for r in rows:
-            w.writerow(r)
+def write_csv(base, rows):
+    if not rows: print("No rows to write"); return
+    ts=datetime.now().strftime("%Y%m%d_%H%M%S"); path=f"{os.path.splitext(base)[0]}_{ts}.csv"
+    with open(path,"w",encoding="utf-8",newline="") as f:
+        w=csv.DictWriter(f, fieldnames=COLUMNS); w.writeheader(); [w.writerow(r) for r in rows]
     print(f"Wrote {len(rows)} rows to {path}")
 
 def main():
-    opts = parse_args()
-    if not opts.api_key:
-        raise SystemExit("Missing API key. Provide --api-key or set YT_API_KEY")
+    a=parse_args()
+    if not a.api_key: raise SystemExit("Missing API key. Set YT_API_KEY or pass --api-key")
+    after,before = last_year_iso()
+    svc = build("youtube","v3",developerKey=a.api_key)
 
-    global INCLUDE_NO_TAG_GLOBAL
-    INCLUDE_NO_TAG_GLOBAL = opts.include_no_tag
+    # collect candidate ids
+    all_ids=[]
+    per=max(1, math.ceil(a.limit_rows*5 / max(1,len(a.queries))))  # grab a bit extra
+    for q in a.queries:
+        all_ids += search_ids(svc,q,after,before,a.region,per)
 
-    service = build("youtube", "v3", developerKey=opts.api_key)
+    # details and filtering
+    rows=[]
+    for i in range(0,len(all_ids),50):
+        try:
+            resp=svc.videos().list(part="snippet,contentDetails,statistics,status",
+                                   id=",".join(all_ids[i:i+50])).execute()
+        except HttpError as e:
+            print("Details error:", e); continue
+        for v in resp.get("items",[]):
+            sn=v.get("snippet",{}); cd=v.get("contentDetails",{}); st=v.get("statistics",{}); ss=v.get("status",{})
+            secs=dur_to_sec(cd.get("duration","PT0S"))
+            if secs>65: continue
+            if a.cc_only and str(ss.get("license","")).lower()!="creativecommon": continue
+            title=sn.get("title",""); desc=sn.get("description","")
+            row=dict(
+                videoId=v["id"],
+                videoUrl=f"https://www.youtube.com/watch?v={v['id']}",
+                title=title, description=desc,
+                channelId=sn.get("channelId"), channelTitle=sn.get("channelTitle"),
+                publishedAt=sn.get("publishedAt"),
+                durationSeconds=secs,
+                viewCount=st.get("viewCount"), likeCount=st.get("likeCount"), commentCount=st.get("commentCount"),
+                license=ss.get("license"), definition=cd.get("definition"),
+                madeForKids=ss.get("madeForKids"),
+                tagsCount=len(sn.get("tags",[])) if sn.get("tags") else 0,
+                hasShortsTag="#shorts" in (title+" "+desc).lower(),
+                isShortByTime=True,
+                transcriptText=try_transcript(v["id"])
+            )
+            rows.append(row)
+            if len(rows)>=a.limit_rows: write_csv(a.out, rows); return
+        time.sleep(0.2)
+    write_csv(a.out, rows)
 
-    all_ids = []
-    for q in opts.queries:
-        ids = search_shorts(service, q, opts)
-        print(f"Query '{q}' returned {len(ids)} candidate IDs")
-        all_ids.extend(ids)
-
-    # Deduplicate
-    all_ids = list(dict.fromkeys(all_ids))
-    print(f"After dedupe, {len(all_ids)} IDs")
-
-    rows = fetch_details(service, all_ids)
-    write_csv(opts.out, rows)
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
