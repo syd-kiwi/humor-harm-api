@@ -10,7 +10,8 @@ COLUMNS = ["videoId","videoUrl","title","description","channelId","channelTitle"
            "madeForKids","tagsCount","hasShortsTag","isShortByTime","transcriptText"]
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Simple Shorts collector")
+    p = argparse.ArgumentParser(description="Simple Shorts coclear" \
+    "vfllector")
     p.add_argument("--api-key", default=os.getenv("YT_API_KEY",""))
     p.add_argument("--queries", nargs="+", required=True)
     p.add_argument("--limit-rows", type=int, default=10)
