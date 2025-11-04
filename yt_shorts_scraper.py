@@ -15,7 +15,7 @@ from youtube_transcript_api import (
 #  CONFIGURATION
 # ===============================================================
 API_KEY = os.getenv("YT_API_KEY")
-OUTPUT_CSV = "youtube_shorts_humor_dataset2.csv"
+OUTPUT_CSV = "youtube_shorts_humor_dataset_Oct31.csv"
 
 # ---- Base topic keywords ----
 BASE_TOPIC_KEYWORDS = {
