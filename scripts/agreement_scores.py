@@ -1,256 +1,237 @@
-#!/usr/bin/env python3
 import argparse
 import json
+import itertools
+import math
 from collections import Counter, defaultdict
-from itertools import combinations
-from typing import Any, Dict, List, Optional
 
-import pandas as pd
+import numpy as np
 
 
-def normalize_label_value(result: Dict[str, Any]) -> Optional[str]:
-    value = result.get("value", {})
-    if not isinstance(value, dict):
-        return None
-
-    if "choices" in value and isinstance(value["choices"], list):
-        return "|".join(map(str, value["choices"]))
-
-    if "text" in value:
-        t = value["text"]
-        if isinstance(t, list):
-            return " ".join(map(str, t)).strip()
-        return str(t).strip()
-
-    if "rating" in value:
-        return str(value["rating"])
-
-    return None
+def load_tasks(path: str):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
-def parse_labelstudio_export(json_path: str) -> pd.DataFrame:
+def extract_ratings(tasks):
     """
-    Returns tidy df with columns:
-    item_id, annotator_id, field, label
+    Returns:
+      ratings[task_id][annotation_id][field] = tuple(sorted(choices)) or None
     """
-    with open(json_path, "r", encoding="utf-8") as f:
-        tasks = json.load(f)
-
-    rows = []
+    ratings = {}
     for task in tasks:
-        item_id = str(task.get("id", task.get("task_id", task.get("pk", ""))))
+        tid = task.get("id")
+        ratings[tid] = {}
 
-        for ann in task.get("annotations", []) or []:
-            annotator = (
-                ann.get("created_username")
-                or ann.get("created_by")
-                or ann.get("completed_by")
-                or ann.get("user")
-                or ann.get("id")
-            )
-            annotator_id = str(annotator)
+        for ann in task.get("annotations", []):
+            ann_id = ann.get("completed_by") or ann.get("id")
+            fields = {}
 
-            for res in ann.get("result", []) or []:
-                field = res.get("from_name") or res.get("name")
-                if not field:
-                    continue
+            for r in ann.get("result", []):
+                field = r.get("from_name")
+                choices = (r.get("value") or {}).get("choices")
 
-                label = normalize_label_value(res)
-                if not label:
-                    continue
+                if not choices:
+                    fields[field] = None
+                else:
+                    fields[field] = tuple(sorted(str(c) for c in choices))
 
-                rows.append(
-                    {
-                        "item_id": item_id,
-                        "annotator_id": annotator_id,
-                        "field": str(field),
-                        "label": label,
-                    }
-                )
+            ratings[tid][ann_id] = fields
 
-    if not rows:
-        raise ValueError(
-            "Parsed 0 labels. Your export structure likely differs. "
-            "Paste a small redacted snippet and I will adapt the parser."
-        )
-
-    return pd.DataFrame(rows)
+    return ratings
 
 
-def pairwise_percent_agreement(labels_by_item: Dict[str, Dict[str, Any]]) -> Optional[float]:
-    matches = 0
-    total = 0
-    for _, ann_map in labels_by_item.items():
-        ann_ids = list(ann_map.keys())
-        if len(ann_ids) < 2:
-            continue
-        for a, b in combinations(ann_ids, 2):
-            total += 1
-            if ann_map[a] == ann_map[b]:
-                matches += 1
-    return None if total == 0 else matches / total
+def cohen_kappa(labels1, labels2):
+    n = len(labels1)
+    if n == 0:
+        return float("nan")
 
+    po = sum(1 for a, b in zip(labels1, labels2) if a == b) / n
+    c1 = Counter(labels1)
+    c2 = Counter(labels2)
 
-def cohen_kappa_for_two_lists(y1: List[Any], y2: List[Any]) -> Optional[float]:
-    if len(y1) == 0 or len(y1) != len(y2):
-        return None
-
-    n = len(y1)
-    po = sum(1 for i in range(n) if y1[i] == y2[i]) / n
-
-    c1 = Counter(y1)
-    c2 = Counter(y2)
     pe = 0.0
-    for k in set(c1.keys()) | set(c2.keys()):
-        pe += (c1.get(k, 0) / n) * (c2.get(k, 0) / n)
+    keys = set(c1) | set(c2)
+    for k in keys:
+        pe += (c1[k] / n) * (c2.get(k, 0) / n)
 
     denom = 1.0 - pe
     if denom == 0:
-        return None
+        return float("nan")
     return (po - pe) / denom
 
 
-def avg_pairwise_cohen_kappa(labels_by_item: Dict[str, Dict[str, Any]]) -> Optional[float]:
-    all_annotators = set()
-    for ann_map in labels_by_item.values():
-        all_annotators.update(ann_map.keys())
-    all_annotators = sorted(all_annotators)
+def pairwise_exact_agreement(ratings, field):
+    agree = []
+    for tid, annos in ratings.items():
+        vals = []
+        for _, fields in annos.items():
+            v = fields.get(field)
+            if v is not None:
+                vals.append(v)
 
-    kappas = []
-    for a, b in combinations(all_annotators, 2):
-        y1, y2 = [], []
-        for _, ann_map in labels_by_item.items():
-            if a in ann_map and b in ann_map:
-                y1.append(ann_map[a])
-                y2.append(ann_map[b])
-        k = cohen_kappa_for_two_lists(y1, y2)
-        if k is not None:
-            kappas.append(k)
+        for v1, v2 in itertools.combinations(vals, 2):
+            agree.append(1 if v1 == v2 else 0)
 
-    return None if not kappas else sum(kappas) / len(kappas)
+    return float(np.mean(agree)) if agree else float("nan"), len(agree)
 
 
-def krippendorff_alpha_nominal(labels_by_item: Dict[str, Dict[str, Any]]) -> Optional[float]:
-    coincidence: Dict[Any, Dict[Any, float]] = defaultdict(lambda: defaultdict(float))
-    categories = set()
+def avg_pairwise_kappa_single_choice(ratings, field):
+    pair_map = defaultdict(lambda: ([], []))
 
-    for _, ann_map in labels_by_item.items():
-        vals = list(ann_map.values())
-        if len(vals) < 2:
-            continue
-        freq = Counter(vals)
-        cats = list(freq.keys())
-        categories.update(cats)
+    for _, annos in ratings.items():
+        vals = {}
+        for aid, fields in annos.items():
+            v = fields.get(field)
+            if v is None:
+                continue
+            if isinstance(v, tuple) and len(v) == 1:
+                v = v[0]
+            vals[aid] = v
 
-        n_u = sum(freq.values())
-        if n_u < 2:
-            continue
+        for a1, a2 in itertools.combinations(sorted(vals.keys()), 2):
+            l1, l2 = pair_map[(a1, a2)]
+            l1.append(vals[a1])
+            l2.append(vals[a2])
+            pair_map[(a1, a2)] = (l1, l2)
 
-        for c in cats:
-            for k in cats:
-                add = freq[c] * (freq[k] - (1 if c == k else 0)) / (n_u - 1)
-                coincidence[c][k] += add
+    weighted = []
+    total_n = 0
 
-    categories = sorted(categories)
-    if not categories:
-        return None
+    for _, (l1, l2) in pair_map.items():
+        k = cohen_kappa(l1, l2)
+        n = len(l1)
+        if not math.isnan(k) and n > 0:
+            weighted.append((k, n))
+            total_n += n
 
-    total = 0.0
-    diag = 0.0
-    marginals: Dict[Any, float] = defaultdict(float)
+    if total_n == 0:
+        return float("nan"), 0
 
-    for c in categories:
-        for k in categories:
-            v = coincidence[c].get(k, 0.0)
-            total += v
-            if c == k:
-                diag += v
-            marginals[c] += v
-
-    if total == 0:
-        return None
-
-    Do = 1.0 - (diag / total)
-
-    M = sum(marginals.values())
-    if M <= 1:
-        return None
-
-    sum_same = 0.0
-    for c in categories:
-        m = marginals[c]
-        sum_same += m * (m - 1.0)
-
-    De = 1.0 - (sum_same / (M * (M - 1.0)))
-    if De == 0:
-        return None
-
-    return 1.0 - (Do / De)
+    k_avg = sum(k * n for k, n in weighted) / total_n
+    return k_avg, total_n
 
 
-def labels_by_item_for_field(df: pd.DataFrame, field: str) -> Dict[str, Dict[str, Any]]:
-    sub = df[df["field"] == field]
-    out: Dict[str, Dict[str, Any]] = defaultdict(dict)
-    for _, row in sub.iterrows():
-        out[str(row["item_id"])][str(row["annotator_id"])] = row["label"]
-    return out
+def krippendorff_alpha_nominal_single_choice(ratings, field):
+    units = []
+    for _, annos in ratings.items():
+        vals = []
+        for _, fields in annos.items():
+            v = fields.get(field)
+            if v is None:
+                continue
+            if isinstance(v, tuple) and len(v) == 1:
+                v = v[0]
+            vals.append(v)
+        if len(vals) >= 2:
+            units.append(vals)
+
+    if not units:
+        return float("nan"), 0
+
+    do_num = 0.0
+    do_den = 0.0
+    all_vals = []
+
+    for vals in units:
+        all_vals.extend(vals)
+        for i in range(len(vals)):
+            for j in range(i + 1, len(vals)):
+                do_num += 0.0 if vals[i] == vals[j] else 1.0
+                do_den += 1.0
+
+    do = do_num / do_den if do_den else float("nan")
+
+    n = len(all_vals)
+    freq = Counter(all_vals)
+    de = 1.0 - sum((c / n) ** 2 for c in freq.values())
+
+    if de == 0:
+        return float("nan"), len(units)
+
+    alpha = 1.0 - (do / de)
+    return alpha, len(units)
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description="Agreement metrics from Label Studio JSON export")
-    ap.add_argument("--json", required=True, help="Path to export JSON")
-    ap.add_argument("--out_json", default="agreement_scores.json", help="Output metrics JSON")
-    ap.add_argument("--out_csv", default="", help="Optional: write tidy labels CSV")
+def avg_pairwise_jaccard_multi_select(ratings, field):
+    vals = []
+    for _, annos in ratings.items():
+        sets = []
+        for _, fields in annos.items():
+            v = fields.get(field)
+            if v is None:
+                continue
+            sets.append(set(v) if isinstance(v, tuple) else {v})
+
+        for s1, s2 in itertools.combinations(sets, 2):
+            union = len(s1 | s2)
+            inter = len(s1 & s2)
+            j = (inter / union) if union else 1.0
+            vals.append(j)
+
+    return float(np.mean(vals)) if vals else float("nan"), len(vals)
+
+
+def field_stats(ratings):
+    field_lengths = defaultdict(Counter)
+    fields_seen = set()
+
+    for _, annos in ratings.items():
+        for _, fdict in annos.items():
+            for field, v in fdict.items():
+                fields_seen.add(field)
+                if v is None:
+                    field_lengths[field]["none"] += 1
+                else:
+                    field_lengths[field][len(v) if isinstance(v, tuple) else 1] += 1
+
+    single_choice = []
+    multi_select = []
+
+    for field in sorted(fields_seen):
+        counts = field_lengths[field]
+        has_multi = any(k not in ("none", 1) for k in counts.keys())
+        if has_multi:
+            multi_select.append(field)
+        else:
+            single_choice.append(field)
+
+    return single_choice, multi_select
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--json", required=True, help="Label Studio export json path")
     args = ap.parse_args()
 
-    df = parse_labelstudio_export(args.json)
+    tasks = load_tasks(args.json)
+    ratings = extract_ratings(tasks)
 
-    if args.out_csv:
-        df.to_csv(args.out_csv, index=False)
+    task_count = len(tasks)
+    ann_count = sum(len(t.get("annotations", [])) for t in tasks)
 
-    fields = sorted(df["field"].dropna().unique().tolist())
+    print(f"Tasks: {task_count}")
+    print(f"Annotations total: {ann_count}")
 
-    results: Dict[str, Any] = {"input_json": args.json, "fields": {}}
+    single_fields, multi_fields = field_stats(ratings)
 
-    for field in fields:
-        lb = labels_by_item_for_field(df, field)
-        n_items = len(lb)
-        n_ratings = sum(len(v) for v in lb.values())
-        annotators = sorted({a for v in lb.values() for a in v.keys()})
+    print("\nSingle choice fields")
+    for field in single_fields:
+        pa, npa = pairwise_exact_agreement(ratings, field)
+        k, nk = avg_pairwise_kappa_single_choice(ratings, field)
+        a, nu = krippendorff_alpha_nominal_single_choice(ratings, field)
+        print(f"\nField: {field}")
+        print(f"Pairwise exact agreement: {pa:.4f} based on {npa} pairs")
+        print(f"Average pairwise Cohen kappa: {k:.4f} based on {nk} aligned items")
+        print(f"Krippendorff alpha nominal: {a:.4f} based on {nu} tasks")
 
-        pa = pairwise_percent_agreement(lb)
-        ck = avg_pairwise_cohen_kappa(lb)
-        ka = krippendorff_alpha_nominal(lb)
-
-        results["fields"][field] = {
-            "counts": {
-                "num_items": n_items,
-                "num_ratings": n_ratings,
-                "num_annotators": len(annotators),
-            },
-            "metrics": {
-                "percent_agreement_pairwise": None if pa is None else round(pa, 4),
-                "cohen_kappa_avg_pairwise": None if ck is None else round(ck, 4),
-                "krippendorff_alpha_nominal": None if ka is None else round(ka, 4),
-            },
-        }
-
-    with open(args.out_json, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2)
-
-    print(f"Wrote {args.out_json}")
-    print("Fields:")
-    for field in fields:
-        m = results["fields"][field]["metrics"]
-        c = results["fields"][field]["counts"]
-        print(
-            f"{field}: items {c['num_items']} ratings {c['num_ratings']} "
-            f"PA {m['percent_agreement_pairwise']} "
-            f"Kappa {m['cohen_kappa_avg_pairwise']} "
-            f"Alpha {m['krippendorff_alpha_nominal']}"
-        )
+    print("\nMulti select fields")
+    for field in multi_fields:
+        pa, npa = pairwise_exact_agreement(ratings, field)
+        j, nj = avg_pairwise_jaccard_multi_select(ratings, field)
+        print(f"\nField: {field}")
+        print(f"Pairwise exact agreement: {pa:.4f} based on {npa} pairs")
+        print(f"Average pairwise Jaccard: {j:.4f} based on {nj} pairs")
 
 
 if __name__ == "__main__":
     main()
-
