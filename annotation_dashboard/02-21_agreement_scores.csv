@@ -1,0 +1,7 @@
+field,two_annotator_items,three_plus_annotator_items,skipped_items_less_than_2,cohen_kappa,krippendorff_alpha_nominal
+humor_presence,59,142,199,0.528942,0.576033
+humor_type,59,142,199,0.493127,0.701348
+dark_intensity,17,21,79,0.708571,0.287855
+target_category,3,12,12,1.0,0.803636
+stand_up,69,48,56,0.892019,0.963384
+irony_or_satire_present,59,142,199,0.482456,0.59717

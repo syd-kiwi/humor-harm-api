@@ -1,0 +1,2 @@
+n_items_used,mean_pairwise_overlap_rate,median_pairwise_overlap_rate,mean_pairwise_jaccard,median_pairwise_jaccard,pct_any_topic_shared_by_2plus,pct_any_topic_shared_by_all,mean_topics_per_annotator,mean_annotators_per_item
+201,0.7412934577114427,1.0,0.6561912039800994,0.666667,0.9154228855721394,0.6417910447761194,1.1695688109452735,2.716417910447761
