@@ -21,7 +21,7 @@ NOT_FUNNY_VALUE = "not humor"
 
 VOTE_MODE_DEFAULT = "majority"  # "majority" or "latest"
 
-DEFAULT_JSON_PATH = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/02-05.json"
+DEFAULT_JSON_PATH = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/02-22.json"
 
 
 def try_load_json_list(p: Path) -> Optional[List[Dict[str, Any]]]:
