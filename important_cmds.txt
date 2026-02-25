@@ -1,0 +1,1 @@
+curl -L "https://humor-harm-dataset.space/api/projects/1/export?exportType=CSV&download_all_tasks=true"   -H "Authorization: Token aa667a3cbca3e8a8f3245443430fc603bda848e8"   -o project_1_export.csv

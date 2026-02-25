@@ -76,10 +76,10 @@ ALLOWED_VALUES = {
 MODEL_LIST = [
     #"deepseek-ai/DeepSeek-V3.1", done
     #"gemini-3.1-pro-preview",
-    "gpt-5-mini-2025-08-07",
-    #"claude-sonnet-4-6",
+    "gemini-2.5-flash"
+    #"gpt-5-mini-2025-08-07", done
+    #"claude-sonnet-4-6", done
 ]
-
 
 # -----------------------------
 # Local HF model helpers
@@ -132,7 +132,7 @@ def get_answer_openai(client: OpenAI, model_name: str, system_prompt: str, quest
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": question},
         ],
-        temperature=1,
+        temperature=0,
     )
     return response.choices[0].message.content.strip()
 
@@ -224,6 +224,7 @@ def call_together_with_retry(client: Together, **kwargs):
 
 
 def get_answer_together(client, model_name: str, system_prompt: str, question: str) -> str:
+    # NOTE: Do NOT set temperature here; some Together models reject temperature=0.
     response = call_together_with_retry(
         client,
         model=model_name,
@@ -231,7 +232,6 @@ def get_answer_together(client, model_name: str, system_prompt: str, question: s
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": question},
         ],
-        temperature=0,
     )
     return response.choices[0].message.content
 
@@ -253,13 +253,16 @@ def make_client(model_name: str):
 # CSV input (pandas)
 # Required columns: video, transcript_text
 # -----------------------------
-def iter_csv_records(dataset_path: str):
+def iter_csv_records_unique(dataset_path: str):
     df = pd.read_csv(dataset_path)
 
     required = ["video", "transcript_text"]
     missing = [c for c in required if c not in df.columns]
     if missing:
         raise ValueError(f"CSV missing required columns: {missing}. Found: {list(df.columns)}")
+
+    seen = set()
+    n_dupes = 0
 
     for idx, row in df.iterrows():
         video = row["video"]
@@ -268,8 +271,18 @@ def iter_csv_records(dataset_path: str):
         video_str = "" if pd.isna(video) else str(video).strip()
         transcript_str = "" if pd.isna(transcript) else str(transcript).strip()
 
+        # Enforce uniqueness by video id (QID)
+        qid = video_str if video_str else str(idx)
+        if qid in seen:
+            n_dupes += 1
+            continue
+
+        seen.add(qid)
         obj = {"video": video_str, "transcript_text": transcript_str}
         yield obj, idx
+
+    if n_dupes > 0:
+        print(f"[i] Dropped {n_dupes} duplicate rows based on video/QID uniqueness")
 
 
 def get_content_text(obj: Dict[str, Any]) -> str:
@@ -400,7 +413,7 @@ def parse_annotation(raw_output: str) -> Tuple[Dict[str, Any], List[str]]:
 
 
 # -----------------------------
-# Writers
+# Writers + resume helpers
 # -----------------------------
 def write_outputs(rows: List[Dict[str, Any]], model_tag: str, output_path: str):
     os.makedirs(output_path, exist_ok=True)
@@ -414,14 +427,76 @@ def write_outputs(rows: List[Dict[str, Any]], model_tag: str, output_path: str):
     pd.DataFrame(rows).to_csv(csv_path, index=False)
 
 
+def load_done_qids(output_path: str, model_tag: str) -> set:
+    csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
+    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
+
+    done = set()
+
+    if os.path.exists(csv_path):
+        try:
+            df = pd.read_csv(csv_path)
+            if "QID" in df.columns:
+                done.update(str(x) for x in df["QID"].dropna().tolist())
+        except Exception:
+            pass
+
+    if os.path.exists(jsonl_path):
+        try:
+            with open(jsonl_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    obj = json.loads(line)
+                    qid = obj.get("QID")
+                    if qid is not None:
+                        done.add(str(qid))
+        except Exception:
+            pass
+
+    return done
+
+
+def load_existing_rows(output_path: str, model_tag: str) -> List[Dict[str, Any]]:
+    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
+    rows: List[Dict[str, Any]] = []
+    if os.path.exists(jsonl_path):
+        try:
+            with open(jsonl_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    rows.append(json.loads(line))
+        except Exception:
+            pass
+    return rows
+
+
 # -----------------------------
 # Main annotation loops
 # -----------------------------
 def online_llm_annotate_csv(client, dataset_path: str, model_name: str, output_path: str, verbose=True):
     model_name_lower = model_name.lower()
-    rows = []
+    model_tag = model_name_lower.split("/")[-1]
 
-    for obj, idx in iter_csv_records(dataset_path):
+    done_qids = load_done_qids(output_path, model_tag)
+    existing_rows = load_existing_rows(output_path, model_tag)
+    rows = existing_rows[:]
+
+    if done_qids:
+        print(f"[i] {model_tag}: loaded {len(done_qids)} done QIDs, will skip them")
+
+    for obj, idx in iter_csv_records_unique(dataset_path):
+        qid = obj.get("video", "") or str(idx)
+
+        # Enforce uniqueness across the output too
+        if str(qid) in done_qids:
+            if verbose:
+                print(f"SKIP QID={qid} (already done)")
+            continue
+
         prompt = build_annotation_prompt(obj)
 
         try:
@@ -438,11 +513,9 @@ def online_llm_annotate_csv(client, dataset_path: str, model_name: str, output_p
 
         except Exception as e:
             raw_answer = ""
-            annotation, issues = normalize_annotation({})
+            annotation, _ = normalize_annotation({})
             parse_issues = ["request_failed", type(e).__name__]
-            print(f"[!] Failed QID={obj.get('video', idx)} | {type(e).__name__}: {e}")
-
-        qid = obj.get("video", idx)
+            print(f"[!] Failed QID={qid} | {type(e).__name__}: {e}")
 
         row = {
             "QID": qid,
@@ -451,22 +524,36 @@ def online_llm_annotate_csv(client, dataset_path: str, model_name: str, output_p
             **annotation,
         }
         rows.append(row)
+        done_qids.add(str(qid))
 
         if verbose:
             print(f"QID={qid} | Issues={parse_issues}")
 
-        # checkpoint every 25 items so you don't lose work
         if len(rows) % 25 == 0:
-            write_outputs(rows, model_name_lower.split("/")[-1], output_path)
+            write_outputs(rows, model_tag, output_path)
 
-    write_outputs(rows, model_name_lower.split("/")[-1], output_path)
+    write_outputs(rows, model_tag, output_path)
 
 
 def local_llm_annotate_csv(model_path: str, dataset_path: str, output_path: str, verbose=True):
     model, tokenizer = load_model_and_tokenizer(model_path)
-    rows = []
+    model_tag = os.path.basename(model_path)
 
-    for obj, idx in iter_csv_records(dataset_path):
+    done_qids = load_done_qids(output_path, model_tag)
+    existing_rows = load_existing_rows(output_path, model_tag)
+    rows = existing_rows[:]
+
+    if done_qids:
+        print(f"[i] {model_tag}: loaded {len(done_qids)} done QIDs, will skip them")
+
+    for obj, idx in iter_csv_records_unique(dataset_path):
+        qid = obj.get("video", "") or str(idx)
+
+        if str(qid) in done_qids:
+            if verbose:
+                print(f"SKIP QID={qid} (already done)")
+            continue
+
         prompt = build_annotation_prompt(obj)
 
         try:
@@ -474,11 +561,10 @@ def local_llm_annotate_csv(model_path: str, dataset_path: str, output_path: str,
             annotation, parse_issues = parse_annotation(raw_answer)
         except Exception as e:
             raw_answer = ""
-            annotation, issues = normalize_annotation({})
+            annotation, _ = normalize_annotation({})
             parse_issues = ["request_failed", type(e).__name__]
-            print(f"[!] Failed local QID={obj.get('video', idx)} | {type(e).__name__}: {e}")
+            print(f"[!] Failed local QID={qid} | {type(e).__name__}: {e}")
 
-        qid = obj.get("video", idx)
         row = {
             "QID": qid,
             "RawResponse": raw_answer,
@@ -486,14 +572,15 @@ def local_llm_annotate_csv(model_path: str, dataset_path: str, output_path: str,
             **annotation,
         }
         rows.append(row)
+        done_qids.add(str(qid))
 
         if verbose:
             print(f"QID={qid} | Issues={parse_issues}")
 
         if len(rows) % 25 == 0:
-            write_outputs(rows, os.path.basename(model_path), output_path)
+            write_outputs(rows, model_tag, output_path)
 
-    write_outputs(rows, os.path.basename(model_path), output_path)
+    write_outputs(rows, model_tag, output_path)
 
 
 # -----------------------------
@@ -514,11 +601,13 @@ def main():
         default="./outputs",
         help="Directory to save model annotation outputs.",
     )
+    parser.add_argument("--verbose", default=False, action="store_true")
     args = parser.parse_args()
 
     dataset_path = args.dataset_path
     models_path = "./models"
     output_path = args.output_path
+    verbose = args.verbose
 
     model_list = MODEL_LIST
     if args.model_name is not None:
@@ -532,13 +621,13 @@ def main():
                 if model_name == args.model_name or args.model_name is None:
                     model_path = os.path.join(models_path, model_name)
                     print(f"Loading local model {model_name}")
-                    local_llm_annotate_csv(model_path, dataset_path, output_path)
+                    local_llm_annotate_csv(model_path, dataset_path, output_path, verbose=verbose)
 
     if not args.local_only:
         for model_name in model_list:
             print(f"Loading online model {model_name}")
             client = make_client(model_name)
-            online_llm_annotate_csv(client, dataset_path, model_name, output_path)
+            online_llm_annotate_csv(client, dataset_path, model_name, output_path, verbose=verbose)
 
 
 if __name__ == "__main__":
