@@ -1,8 +1,12 @@
 import argparse
 import json
 import os
+import random
 import re
+import time
 from typing import Any, Dict, List, Optional, Tuple
+
+import pandas as pd
 
 import anthropic
 import openai
@@ -69,31 +73,17 @@ ALLOWED_VALUES = {
     "dark_intensity": ["1 - Mild", "2 - Moderate", "3 - Severe"],
 }
 
-
 MODEL_LIST = [
-    "deepseek-ai/DeepSeek-V3",
-    "deepseek-ai/DeepSeek-R1-0528-tput",
-    "mistralai/Mistral-7B-Instruct-v0.2",
-    "mistralai/Ministral-3-14B-Instruct-2512",
-    "mistralai/Mistral-Small-24B-Instruct-2501",
-    "meta-llama/Meta-Llama-3-8B-Instruct-Lite",
-    "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-    "gemini-2.5-flash",
-    "gemini-2.0-flash",
+    #"deepseek-ai/DeepSeek-V3.1", done
+    #"gemini-3.1-pro-preview",
     "gpt-5-mini-2025-08-07",
-    "gpt-4.1-mini-2025-04-14",
-    "gpt-3.5-turbo-0125",
-    "gpt-4o-2024-08-06",
-    "o4-mini-2025-04-16",
-    "o3-mini",
-    "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "Qwen/Qwen3-Next-80B-A3B-Thinking",
-    "claude-3-haiku-20240307",
-    "claude-3-5-haiku-20241022",
-    "claude-haiku-4-5-20251001",
+    #"claude-sonnet-4-6",
 ]
 
 
+# -----------------------------
+# Local HF model helpers
+# -----------------------------
 def load_model_and_tokenizer(model_path: str):
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
@@ -132,6 +122,9 @@ def complete_conversation(model, tokenizer, system_prompt: str, user_prompt: str
     return output_str
 
 
+# -----------------------------
+# API model callers
+# -----------------------------
 def get_answer_openai(client: OpenAI, model_name: str, system_prompt: str, question: str) -> str:
     response = client.chat.completions.create(
         model=model_name,
@@ -139,7 +132,7 @@ def get_answer_openai(client: OpenAI, model_name: str, system_prompt: str, quest
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": question},
         ],
-        temperature=0,
+        temperature=1,
     )
     return response.choices[0].message.content.strip()
 
@@ -155,16 +148,84 @@ def get_answer_claude(client, model_name: str, system_prompt: str, question: str
 
 
 def get_answer_gemini(client, model_name: str, system_prompt: str, question: str) -> str:
-    response = client.models.generate_content(
-        model=model_name,
-        config=genai.types.GenerateContentConfig(system_instruction=system_prompt),
-        contents=question,
-    )
-    return response.text
+    max_tries = 8
+    base_sleep = 1.0
+
+    last_err = None
+    for attempt in range(1, max_tries + 1):
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                config=genai.types.GenerateContentConfig(
+                    system_instruction=system_prompt,
+                    temperature=0,
+                ),
+                contents=question,
+            )
+            return (response.text or "").strip()
+        except Exception as e:
+            last_err = e
+            msg = str(e).lower()
+
+            retryable = (
+                "503" in msg
+                or "unavailable" in msg
+                or "servererror" in msg
+                or "timeout" in msg
+                or "temporarily" in msg
+            )
+
+            if (not retryable) or attempt == max_tries:
+                raise
+
+            sleep_s = base_sleep * (2 ** (attempt - 1))
+            sleep_s = min(sleep_s, 30)
+            sleep_s *= (0.7 + 0.6 * random.random())  # jitter
+
+            print(
+                f"[Gemini retry] attempt {attempt}/{max_tries} sleeping {sleep_s:.1f}s | {type(e).__name__}"
+            )
+            time.sleep(sleep_s)
+
+    raise last_err  # should not hit
+
+
+def call_together_with_retry(client: Together, **kwargs):
+    max_tries = 8
+    base_sleep = 1.0
+    last_err = None
+
+    for attempt in range(1, max_tries + 1):
+        try:
+            return client.chat.completions.create(**kwargs)
+        except Exception as e:
+            last_err = e
+            msg = str(e).lower()
+            retryable = (
+                "503" in msg
+                or "service unavailable" in msg
+                or "timeout" in msg
+                or "temporarily" in msg
+            )
+
+            if (not retryable) or attempt == max_tries:
+                raise
+
+            sleep_s = base_sleep * (2 ** (attempt - 1))
+            sleep_s = min(sleep_s, 30)
+            sleep_s *= (0.7 + 0.6 * random.random())
+
+            print(
+                f"[Together retry] attempt {attempt}/{max_tries} sleeping {sleep_s:.1f}s | {type(e).__name__}"
+            )
+            time.sleep(sleep_s)
+
+    raise last_err  # should not hit
 
 
 def get_answer_together(client, model_name: str, system_prompt: str, question: str) -> str:
-    response = client.chat.completions.create(
+    response = call_together_with_retry(
+        client,
         model=model_name,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -175,52 +236,65 @@ def get_answer_together(client, model_name: str, system_prompt: str, question: s
     return response.choices[0].message.content
 
 
-def iter_jsonl_records(dataset_path: str):
-    if os.path.isdir(dataset_path):
-        for filename in os.listdir(dataset_path):
-            if not filename.lower().endswith(".jsonl"):
-                continue
-            file_path = os.path.join(dataset_path, filename)
-            with open(file_path, "r", encoding="utf8") as f:
-                for idx, line in enumerate(f):
-                    line = line.strip()
-                    if not line:
-                        continue
-                    obj = json.loads(line)
-                    yield obj, f"{filename}__{idx}"
-    else:
-        with open(dataset_path, "r", encoding="utf8") as f:
-            for idx, line in enumerate(f):
-                line = line.strip()
-                if not line:
-                    continue
-                obj = json.loads(line)
-                yield obj, idx
+def make_client(model_name: str):
+    model_name_lower = model_name.lower()
+    if "gpt" in model_name_lower or "o4-" in model_name_lower or model_name_lower.startswith("o3-"):
+        return openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    if "claude" in model_name_lower:
+        return anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    if "gemini" in model_name_lower:
+        return genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+    if "/" in model_name_lower:
+        return Together(api_key=os.getenv("TOGETHER_API_KEY"))
+    raise ValueError(f"Cannot find API for {model_name}")
+
+
+# -----------------------------
+# CSV input (pandas)
+# Required columns: video, transcript_text
+# -----------------------------
+def iter_csv_records(dataset_path: str):
+    df = pd.read_csv(dataset_path)
+
+    required = ["video", "transcript_text"]
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        raise ValueError(f"CSV missing required columns: {missing}. Found: {list(df.columns)}")
+
+    for idx, row in df.iterrows():
+        video = row["video"]
+        transcript = row["transcript_text"]
+
+        video_str = "" if pd.isna(video) else str(video).strip()
+        transcript_str = "" if pd.isna(transcript) else str(transcript).strip()
+
+        obj = {"video": video_str, "transcript_text": transcript_str}
+        yield obj, idx
 
 
 def get_content_text(obj: Dict[str, Any]) -> str:
-    for key in ["text", "transcript", "content", "caption", "question"]:
-        value = obj.get(key)
-        if isinstance(value, str) and value.strip():
-            return value.strip()
+    value = obj.get("transcript_text", "")
+    if isinstance(value, str) and value.strip():
+        return value.strip()
     return ""
 
 
 def build_annotation_prompt(obj: Dict[str, Any]) -> str:
-    text = get_content_text(obj)
-    metadata_bits = []
-    for key in ["qid", "id", "title", "lang", "source"]:
-        if key in obj and obj[key] not in [None, ""]:
-            metadata_bits.append(f"{key}: {obj[key]}")
+    transcript = get_content_text(obj)
+    video = obj.get("video", "")
 
-    metadata_block = "\n".join(metadata_bits)
+    metadata_block = f"video: {video}" if video else "None"
+
     return (
         "Annotate the following content using the target schema.\n\n"
-        f"Metadata:\n{metadata_block if metadata_block else 'None'}\n\n"
-        f"Content:\n{text}"
+        f"Metadata:\n{metadata_block}\n\n"
+        f"Content:\n{transcript}"
     )
 
 
+# -----------------------------
+# Output parsing + normalization
+# -----------------------------
 def extract_json_block(raw_output: str) -> Optional[str]:
     if not raw_output:
         return None
@@ -325,66 +399,50 @@ def parse_annotation(raw_output: str) -> Tuple[Dict[str, Any], List[str]]:
     return normalized, issues
 
 
-def make_client(model_name: str):
-    model_name_lower = model_name.lower()
-    if "gpt" in model_name_lower or "o4-" in model_name_lower or model_name_lower.startswith("o3-"):
-        return openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    if "claude" in model_name_lower:
-        return anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-    if "gemini" in model_name_lower:
-        return genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-    if "/" in model_name_lower:
-        return Together(api_key=os.getenv("TOGETHER_API_KEY"))
-    raise ValueError(f"Cannot find API for {model_name}")
+# -----------------------------
+# Writers
+# -----------------------------
+def write_outputs(rows: List[Dict[str, Any]], model_tag: str, output_path: str):
+    os.makedirs(output_path, exist_ok=True)
+
+    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
+    with open(jsonl_path, "w", encoding="utf-8") as f:
+        for row in rows:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+    csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
+    pd.DataFrame(rows).to_csv(csv_path, index=False)
 
 
-def online_llm_annotate_jsonl(client, dataset_path: str, model_name: str, output_path: str, verbose=True):
+# -----------------------------
+# Main annotation loops
+# -----------------------------
+def online_llm_annotate_csv(client, dataset_path: str, model_name: str, output_path: str, verbose=True):
     model_name_lower = model_name.lower()
     rows = []
 
-    for obj, idx in iter_jsonl_records(dataset_path):
+    for obj, idx in iter_csv_records(dataset_path):
         prompt = build_annotation_prompt(obj)
 
-        if "gpt" in model_name_lower or "o4-" in model_name_lower or model_name_lower.startswith("o3-"):
-            raw_answer = get_answer_openai(client, model_name, SYSTEM_PROMPT, prompt)
-        elif "claude" in model_name_lower:
-            raw_answer = get_answer_claude(client, model_name, SYSTEM_PROMPT, prompt)
-        elif "gemini" in model_name_lower:
-            raw_answer = get_answer_gemini(client, model_name, SYSTEM_PROMPT, prompt)
-        else:
-            raw_answer = get_answer_together(client, model_name, SYSTEM_PROMPT, prompt)
+        try:
+            if "gpt" in model_name_lower or "o4-" in model_name_lower or model_name_lower.startswith("o3-"):
+                raw_answer = get_answer_openai(client, model_name, SYSTEM_PROMPT, prompt)
+            elif "claude" in model_name_lower:
+                raw_answer = get_answer_claude(client, model_name, SYSTEM_PROMPT, prompt)
+            elif "gemini" in model_name_lower:
+                raw_answer = get_answer_gemini(client, model_name, SYSTEM_PROMPT, prompt)
+            else:
+                raw_answer = get_answer_together(client, model_name, SYSTEM_PROMPT, prompt)
 
-        annotation, parse_issues = parse_annotation(raw_answer)
-        qid = obj.get("qid", obj.get("id", idx))
+            annotation, parse_issues = parse_annotation(raw_answer)
 
-        row = {
-            "QID": qid,
-            "RawResponse": raw_answer,
-            "ParseIssues": "|".join(parse_issues),
-            **annotation,
-        }
-        rows.append(row)
+        except Exception as e:
+            raw_answer = ""
+            annotation, issues = normalize_annotation({})
+            parse_issues = ["request_failed", type(e).__name__]
+            print(f"[!] Failed QID={obj.get('video', idx)} | {type(e).__name__}: {e}")
 
-        if verbose:
-            print(f"QID={qid}")
-            print(f"Prompt: {repr(prompt[:300])}...")
-            print(f"Raw: {repr(raw_answer[:300])}...")
-            print(f"Annotation: {annotation}")
-            print(f"Issues: {parse_issues}\n")
-
-    write_outputs(rows, model_name_lower.split("/")[-1], output_path)
-
-
-def local_llm_annotate_jsonl(model_path: str, dataset_path: str, output_path: str, verbose=True):
-    model, tokenizer = load_model_and_tokenizer(model_path)
-    rows = []
-
-    for obj, idx in iter_jsonl_records(dataset_path):
-        prompt = build_annotation_prompt(obj)
-        raw_answer = complete_conversation(model, tokenizer, SYSTEM_PROMPT, prompt)
-
-        annotation, parse_issues = parse_annotation(raw_answer)
-        qid = obj.get("qid", obj.get("id", idx))
+        qid = obj.get("video", idx)
 
         row = {
             "QID": qid,
@@ -397,23 +455,50 @@ def local_llm_annotate_jsonl(model_path: str, dataset_path: str, output_path: st
         if verbose:
             print(f"QID={qid} | Issues={parse_issues}")
 
+        # checkpoint every 25 items so you don't lose work
+        if len(rows) % 25 == 0:
+            write_outputs(rows, model_name_lower.split("/")[-1], output_path)
+
+    write_outputs(rows, model_name_lower.split("/")[-1], output_path)
+
+
+def local_llm_annotate_csv(model_path: str, dataset_path: str, output_path: str, verbose=True):
+    model, tokenizer = load_model_and_tokenizer(model_path)
+    rows = []
+
+    for obj, idx in iter_csv_records(dataset_path):
+        prompt = build_annotation_prompt(obj)
+
+        try:
+            raw_answer = complete_conversation(model, tokenizer, SYSTEM_PROMPT, prompt)
+            annotation, parse_issues = parse_annotation(raw_answer)
+        except Exception as e:
+            raw_answer = ""
+            annotation, issues = normalize_annotation({})
+            parse_issues = ["request_failed", type(e).__name__]
+            print(f"[!] Failed local QID={obj.get('video', idx)} | {type(e).__name__}: {e}")
+
+        qid = obj.get("video", idx)
+        row = {
+            "QID": qid,
+            "RawResponse": raw_answer,
+            "ParseIssues": "|".join(parse_issues),
+            **annotation,
+        }
+        rows.append(row)
+
+        if verbose:
+            print(f"QID={qid} | Issues={parse_issues}")
+
+        if len(rows) % 25 == 0:
+            write_outputs(rows, os.path.basename(model_path), output_path)
+
     write_outputs(rows, os.path.basename(model_path), output_path)
 
 
-def write_outputs(rows: List[Dict[str, Any]], model_tag: str, output_path: str):
-    os.makedirs(output_path, exist_ok=True)
-
-    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
-    with open(jsonl_path, "w", encoding="utf-8") as f:
-        for row in rows:
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
-
-    import pandas as pd
-
-    csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
-    pd.DataFrame(rows).to_csv(csv_path, index=False)
-
-
+# -----------------------------
+# CLI
+# -----------------------------
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model_name", default=None)
@@ -421,8 +506,8 @@ def main():
     parser.add_argument("--local_only", default=False, action="store_true")
     parser.add_argument(
         "--dataset_path",
-        default="./questions.jsonl",
-        help="JSONL file or directory containing JSONL files with text/transcript/content fields.",
+        default="./questions.csv",
+        help="CSV file with columns: video, transcript_text",
     )
     parser.add_argument(
         "--output_path",
@@ -447,13 +532,13 @@ def main():
                 if model_name == args.model_name or args.model_name is None:
                     model_path = os.path.join(models_path, model_name)
                     print(f"Loading local model {model_name}")
-                    local_llm_annotate_jsonl(model_path, dataset_path, output_path)
+                    local_llm_annotate_csv(model_path, dataset_path, output_path)
 
     if not args.local_only:
         for model_name in model_list:
             print(f"Loading online model {model_name}")
             client = make_client(model_name)
-            online_llm_annotate_jsonl(client, dataset_path, model_name, output_path)
+            online_llm_annotate_csv(client, dataset_path, model_name, output_path)
 
 
 if __name__ == "__main__":
