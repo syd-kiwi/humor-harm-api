@@ -1,0 +1,264 @@
+-0UhSHd3a7k	https://www.youtube.com/watch?v=-0UhSHd3a7k
+ERROR: [youtube] -0UhSHd3a7k: Video unavailable
+---
+-7h6mmlUnGU	https://www.youtube.com/watch?v=-7h6mmlUnGU
+ERROR: [youtube] -7h6mmlUnGU: Video unavailable
+---
+-PSvajMLAmE	https://www.youtube.com/watch?v=-PSvajMLAmE
+ERROR: [youtube] -PSvajMLAmE: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+03gB6f3ktBc	https://www.youtube.com/watch?v=03gB6f3ktBc
+ERROR: [youtube] 03gB6f3ktBc: Video unavailable
+---
+1Lvtg8giPaw	https://www.youtube.com/watch?v=1Lvtg8giPaw
+ERROR: [youtube] 1Lvtg8giPaw: Video unavailable
+---
+2FaqNSLGkwg	https://www.youtube.com/watch?v=2FaqNSLGkwg
+ERROR: [youtube] 2FaqNSLGkwg: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+2c7d9c6ail8	https://www.youtube.com/watch?v=2c7d9c6ail8
+ERROR: [youtube] 2c7d9c6ail8: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+2wcZvqu4lvM	https://www.youtube.com/watch?v=2wcZvqu4lvM
+ERROR: [youtube] 2wcZvqu4lvM: Video unavailable. This video has been removed by the uploader
+---
+3Ocq8lWAwV0	https://www.youtube.com/watch?v=3Ocq8lWAwV0
+ERROR: [youtube] 3Ocq8lWAwV0: Video unavailable. This video has been removed by the uploader
+---
+3h0k2s2CKQU	https://www.youtube.com/watch?v=3h0k2s2CKQU
+ERROR: [youtube] 3h0k2s2CKQU: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+4HO0EA2vEgw	https://www.youtube.com/watch?v=4HO0EA2vEgw
+ERROR: [youtube] 4HO0EA2vEgw: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+4N64Di3bhlE	https://www.youtube.com/watch?v=4N64Di3bhlE
+ERROR: [youtube] 4N64Di3bhlE: Video unavailable. This video has been removed by the uploader
+---
+4Zr7plwPXPs	https://www.youtube.com/watch?v=4Zr7plwPXPs
+ERROR: [youtube] 4Zr7plwPXPs: Video unavailable. This video has been removed by the uploader
+---
+55uA4c-IPYM	https://www.youtube.com/watch?v=55uA4c-IPYM
+ERROR: [youtube] 55uA4c-IPYM: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+5c50GDHFMQc	https://www.youtube.com/watch?v=5c50GDHFMQc
+ERROR: [youtube] 5c50GDHFMQc: Video unavailable. This video has been removed by the uploader
+---
+5oYh5GUzSMw	https://www.youtube.com/watch?v=5oYh5GUzSMw
+ERROR: [youtube] 5oYh5GUzSMw: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+5tWoYbhD1h0	https://www.youtube.com/watch?v=5tWoYbhD1h0
+ERROR: [youtube] 5tWoYbhD1h0: Video unavailable. This video has been removed by the uploader
+---
+6F7Asy3Vues	https://www.youtube.com/watch?v=6F7Asy3Vues
+ERROR: [youtube] 6F7Asy3Vues: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+6hs9HC1qqJY	https://www.youtube.com/watch?v=6hs9HC1qqJY
+ERROR: [youtube] 6hs9HC1qqJY: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+6xThZX0GEL0	https://www.youtube.com/watch?v=6xThZX0GEL0
+ERROR: [youtube] 6xThZX0GEL0: Video unavailable. This video has been removed by the uploader
+---
+9ecpEEr2S4Q	https://www.youtube.com/watch?v=9ecpEEr2S4Q
+ERROR: [youtube] 9ecpEEr2S4Q: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+A7xMAeq1cBw	https://www.youtube.com/watch?v=A7xMAeq1cBw
+ERROR: [youtube] A7xMAeq1cBw: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+Bsa1DETx_aE	https://www.youtube.com/watch?v=Bsa1DETx_aE
+ERROR: [youtube] Bsa1DETx_aE: Video unavailable
+---
+CHv0TGnwrxw	https://www.youtube.com/watch?v=CHv0TGnwrxw
+ERROR: [youtube] CHv0TGnwrxw: Video unavailable. This video is not available
+---
+CR2UKRYtzZE	https://www.youtube.com/watch?v=CR2UKRYtzZE
+ERROR: [youtube] CR2UKRYtzZE: Video unavailable
+---
+DUohsv7Sfz0	https://www.youtube.com/watch?v=DUohsv7Sfz0
+ERROR: [youtube] DUohsv7Sfz0: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+DVKr8xNs9Q8	https://www.youtube.com/watch?v=DVKr8xNs9Q8
+ERROR: [youtube] DVKr8xNs9Q8: Video unavailable. This video is not available
+---
+DoqoVaI-Ju4	https://www.youtube.com/watch?v=DoqoVaI-Ju4
+ERROR: [youtube] DoqoVaI-Ju4: Video unavailable. This video is no longer available due to a copyright claim by Fremantle International
+---
+FjPs4T7xKvM	https://www.youtube.com/watch?v=FjPs4T7xKvM
+ERROR: [youtube] FjPs4T7xKvM: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+GgD-WIoIJaY	https://www.youtube.com/watch?v=GgD-WIoIJaY
+ERROR: [youtube] GgD-WIoIJaY: Video unavailable. This video has been removed by the uploader
+---
+GzPH4UC8ayQ	https://www.youtube.com/watch?v=GzPH4UC8ayQ
+ERROR: [youtube] GzPH4UC8ayQ: Video unavailable. This video has been removed by the uploader
+---
+H8ysSXz9MGk	https://www.youtube.com/watch?v=H8ysSXz9MGk
+ERROR: [youtube] H8ysSXz9MGk: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+HAf-6wGvcIQ	https://www.youtube.com/watch?v=HAf-6wGvcIQ
+ERROR: [youtube] HAf-6wGvcIQ: Video unavailable. This video has been removed by the uploader
+---
+HEq-XlWCwks	https://www.youtube.com/watch?v=HEq-XlWCwks
+ERROR: [youtube] HEq-XlWCwks: Video unavailable
+---
+IlwZx_64TJo	https://www.youtube.com/watch?v=IlwZx_64TJo
+ERROR: [youtube] IlwZx_64TJo: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+ItwjXJIEFco	https://www.youtube.com/watch?v=ItwjXJIEFco
+ERROR: [youtube] ItwjXJIEFco: Video unavailable. This video has been removed by the uploader
+---
+Jo_Gs6Hns0A	https://www.youtube.com/watch?v=Jo_Gs6Hns0A
+ERROR: [youtube] Jo_Gs6Hns0A: Video unavailable. This video is no longer available due to a copyright claim by Kids Getting Hurt
+---
+K1wF5060oD0	https://www.youtube.com/watch?v=K1wF5060oD0
+ERROR: [youtube] K1wF5060oD0: Video unavailable
+---
+KRRG0S7yDZQ	https://www.youtube.com/watch?v=KRRG0S7yDZQ
+ERROR: [youtube] KRRG0S7yDZQ: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+LId4nBacJGY	https://www.youtube.com/watch?v=LId4nBacJGY
+ERROR: [youtube] LId4nBacJGY: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+LJysnTw8uOM	https://www.youtube.com/watch?v=LJysnTw8uOM
+ERROR: [youtube] LJysnTw8uOM: Video unavailable
+---
+LUE7ae58Fdk	https://www.youtube.com/watch?v=LUE7ae58Fdk
+ERROR: [youtube] LUE7ae58Fdk: Video unavailable
+---
+LriA3Y60jBg	https://www.youtube.com/watch?v=LriA3Y60jBg
+ERROR: [youtube] LriA3Y60jBg: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+MDvBhrKZOeM	https://www.youtube.com/watch?v=MDvBhrKZOeM
+ERROR: [youtube] MDvBhrKZOeM: Video unavailable. This video has been removed by the uploader
+---
+N3-DD2k4cSg	https://www.youtube.com/watch?v=N3-DD2k4cSg
+ERROR: [youtube] N3-DD2k4cSg: Video unavailable
+---
+NVe3cuuzuqg	https://www.youtube.com/watch?v=NVe3cuuzuqg
+ERROR: [youtube] NVe3cuuzuqg: Video unavailable
+---
+ON1pN__JtMo	https://www.youtube.com/watch?v=ON1pN__JtMo
+ERROR: [youtube] ON1pN__JtMo: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+QX-T1MJ-x-4	https://www.youtube.com/watch?v=QX-T1MJ-x-4
+ERROR: [youtube] QX-T1MJ-x-4: Video unavailable
+---
+Qcbb4MS0Djg	https://www.youtube.com/watch?v=Qcbb4MS0Djg
+ERROR: [youtube] Qcbb4MS0Djg: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+QkGpp3-ifGY	https://www.youtube.com/watch?v=QkGpp3-ifGY
+ERROR: [youtube] QkGpp3-ifGY: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+QtMZwVMXB34	https://www.youtube.com/watch?v=QtMZwVMXB34
+ERROR: [youtube] QtMZwVMXB34: Video unavailable. This video has been removed by the uploader
+---
+Rjw185NZbno	https://www.youtube.com/watch?v=Rjw185NZbno
+ERROR: [youtube] Rjw185NZbno: Video unavailable
+---
+RnDByBdQL5s	https://www.youtube.com/watch?v=RnDByBdQL5s
+ERROR: [youtube] RnDByBdQL5s: Video unavailable
+---
+YreXG03kdsk	https://www.youtube.com/watch?v=YreXG03kdsk
+ERROR: [youtube] YreXG03kdsk: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+_XAeV4pTJzE	https://www.youtube.com/watch?v=_XAeV4pTJzE
+ERROR: [youtube] _XAeV4pTJzE: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+at3GD23vjFk	https://www.youtube.com/watch?v=at3GD23vjFk
+ERROR: [youtube] at3GD23vjFk: Video unavailable. This video has been removed by the uploader
+---
+bN-KnoR8IGY	https://www.youtube.com/watch?v=bN-KnoR8IGY
+ERROR: [youtube] bN-KnoR8IGY: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+bfQj40ZYT80	https://www.youtube.com/watch?v=bfQj40ZYT80
+ERROR: [youtube] bfQj40ZYT80: Video unavailable
+---
+cKGhtN6_BaU	https://www.youtube.com/watch?v=cKGhtN6_BaU
+ERROR: [youtube] cKGhtN6_BaU: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+cLRCn0LdWNY	https://www.youtube.com/watch?v=cLRCn0LdWNY
+ERROR: [youtube] cLRCn0LdWNY: Video unavailable
+---
+cS_oEBaYvZo	https://www.youtube.com/watch?v=cS_oEBaYvZo
+ERROR: [youtube] cS_oEBaYvZo: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+ch4Yc3g89_g	https://www.youtube.com/watch?v=ch4Yc3g89_g
+ERROR: [youtube] ch4Yc3g89_g: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+ckfhhfCKxCI	https://www.youtube.com/watch?v=ckfhhfCKxCI
+ERROR: [youtube] ckfhhfCKxCI: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+dhVsYYQaE4A	https://www.youtube.com/watch?v=dhVsYYQaE4A
+ERROR: [youtube] dhVsYYQaE4A: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+e6dnV-TYrgk	https://www.youtube.com/watch?v=e6dnV-TYrgk
+ERROR: [youtube] e6dnV-TYrgk: Video unavailable
+---
+eB2Gz06CKIo	https://www.youtube.com/watch?v=eB2Gz06CKIo
+ERROR: [youtube] eB2Gz06CKIo: Video unavailable
+---
+efZtOXRh1jg	https://www.youtube.com/watch?v=efZtOXRh1jg
+ERROR: [youtube] efZtOXRh1jg: Video unavailable
+---
+fLUut6bZzQw	https://www.youtube.com/watch?v=fLUut6bZzQw
+ERROR: [youtube] fLUut6bZzQw: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+fu1hgReXScQ	https://www.youtube.com/watch?v=fu1hgReXScQ
+ERROR: [youtube] fu1hgReXScQ: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+gUynUNouMK4	https://www.youtube.com/watch?v=gUynUNouMK4
+ERROR: [youtube] gUynUNouMK4: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+gzIKRVQAQJA	https://www.youtube.com/watch?v=gzIKRVQAQJA
+ERROR: [youtube] gzIKRVQAQJA: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+h-jCqtMMkZY	https://www.youtube.com/watch?v=h-jCqtMMkZY
+ERROR: [youtube] h-jCqtMMkZY: Video unavailable
+---
+h0HsiDJS5bU	https://www.youtube.com/watch?v=h0HsiDJS5bU
+ERROR: [youtube] h0HsiDJS5bU: This video has been removed for violating YouTube's policy on nudity or sexual content
+---
+iNBJ8YZZGuQ	https://www.youtube.com/watch?v=iNBJ8YZZGuQ
+ERROR: [youtube] iNBJ8YZZGuQ: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+itl1Lf4hq7c	https://www.youtube.com/watch?v=itl1Lf4hq7c
+ERROR: [youtube] itl1Lf4hq7c: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+jPjib1CnlTo	https://www.youtube.com/watch?v=jPjib1CnlTo
+ERROR: [youtube] jPjib1CnlTo: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+jixFmNrItM8	https://www.youtube.com/watch?v=jixFmNrItM8
+ERROR: [youtube] jixFmNrItM8: This video has been removed for violating YouTube's Terms of Service
+---
+jqXKTXs9Hd0	https://www.youtube.com/watch?v=jqXKTXs9Hd0
+ERROR: [youtube] jqXKTXs9Hd0: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+kbMruO2yNJU	https://www.youtube.com/watch?v=kbMruO2yNJU
+ERROR: [youtube] kbMruO2yNJU: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+ksGjdH4u_7k	https://www.youtube.com/watch?v=ksGjdH4u_7k
+ERROR: [youtube] ksGjdH4u_7k: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+lIg5EwaOjdM	https://www.youtube.com/watch?v=lIg5EwaOjdM
+ERROR: [youtube] lIg5EwaOjdM: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+---
+l_S0_4T-DuQ	https://www.youtube.com/watch?v=l_S0_4T-DuQ
+ERROR: [youtube] l_S0_4T-DuQ: Video unavailable
+---
+n82-3so9D54	https://www.youtube.com/watch?v=n82-3so9D54
+ERROR: [youtube] n82-3so9D54: Video unavailable. This video is not available
+---
+oaiSZaEct18	https://www.youtube.com/watch?v=oaiSZaEct18
+ERROR: [youtube] oaiSZaEct18: Video unavailable
+---
+output	https://www.youtube.com/watch?v=output
+ERROR: [youtube:truncated_id] output: Incomplete YouTube ID output. URL https://www.youtube.com/watch?v=output looks truncated.
+---
+qYsx3A5sQgs	https://www.youtube.com/watch?v=qYsx3A5sQgs
+ERROR: [youtube] qYsx3A5sQgs: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
+r-gq7OP-Fmg	https://www.youtube.com/watch?v=r-gq7OP-Fmg
+ERROR: [youtube] r-gq7OP-Fmg: Video unavailable. This video is not available
+---
+rJBAN9xuIzQ	https://www.youtube.com/watch?v=rJBAN9xuIzQ
+ERROR: [youtube] rJBAN9xuIzQ: Video unavailable. This video is no longer available because the YouTube account associated with this video has been terminated.
+---
