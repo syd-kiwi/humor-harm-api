@@ -5,7 +5,7 @@ from collections import defaultdict
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 COMMENT_SCORES = os.path.join(BASE_DIR, "comment_level_scores.csv")
-OUTPUT_VIDEO_SCORES = os.path.join(BASE_DIR, "video_level_scores_neutral50_screened.csv")
+OUTPUT_VIDEO_SCORES = os.path.join(BASE_DIR, "video_level_scores_50.csv")
 
 
 def _to_float(value, default=0.0):
@@ -18,7 +18,7 @@ def _to_float(value, default=0.0):
 def build_video_scores_with_neutral_screening(
     comment_scores_path: str,
     output_path: str,
-    neutral_keep_frac: float = 0.5,
+    neutral_keep_frac: float = 0.50,
     random_seed: int = 42,
 ):
     rows_by_video = defaultdict(list)
