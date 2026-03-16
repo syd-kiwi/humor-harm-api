@@ -2,23 +2,19 @@ import argparse
 import os
 import re
 import sys
+from pathlib import Path
 from typing import Tuple
 
 import numpy as np
 import pandas as pd
 
-from bertopic import BERTopic
-from bertopic.representation import KeyBERTInspired
 from sklearn.feature_extraction.text import CountVectorizer
 
-from sentence_transformers import SentenceTransformer
-from umap import UMAP
-import hdbscan
 
-
-DEFAULT_INPUT = "/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv"
-DEFAULT_OUT = "/home/kiwi-pandas/Documents/humor-harm-api/scripts/topic_analysis/bertopic_topics.csv"
-DEFAULT_TOPIC_INFO = "/home/kiwi-pandas/Documents/humor-harm-api/scripts/topic_analysis_bertopic_topic_info.csv"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_INPUT = str(REPO_ROOT / "unified_dataset.csv")
+DEFAULT_OUT = str(REPO_ROOT / "scripts" / "topic_analysis" / "bertopic_topics.csv")
+DEFAULT_TOPIC_INFO = str(REPO_ROOT / "scripts" / "topic_analysis" / "bertopic_topic_info.csv")
 
 DEFAULT_ID_COL = "video_id"
 DEFAULT_DESC_COL = "description"
@@ -122,6 +118,20 @@ def train_and_assign_topics(
         raise ValueError(
             "Too few training docs after filtering. Lower --min-words-train."
         )
+
+    # Delayed heavy imports so --help and argument parsing work even without deps installed.
+    try:
+        from bertopic import BERTopic
+        from bertopic.representation import KeyBERTInspired
+        import hdbscan
+        from sentence_transformers import SentenceTransformer
+        from umap import UMAP
+    except ImportError as exc:
+        missing_pkg = str(exc).split("'")[1] if "'" in str(exc) else str(exc)
+        raise ImportError(
+            "Missing BERTopic dependency. Install requirements before running this script. "
+            f"Original error: {missing_pkg}"
+        ) from exc
 
     # Embeddings
     embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -279,6 +289,9 @@ def main():
         n_neighbors=args.n_neighbors,
         n_components=args.n_components,
     )
+
+    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.topic_info_output).parent.mkdir(parents=True, exist_ok=True)
 
     out.to_csv(args.output, index=False)
     topic_info.to_csv(args.topic_info_output, index=False)
