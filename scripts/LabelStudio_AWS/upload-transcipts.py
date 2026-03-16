@@ -38,7 +38,7 @@ def get_ls_tasks(api_token: str) -> list[dict]:
     r = requests.get(
         f"{LABEL_STUDIO_URL}/api/projects/{PROJECT_ID}/tasks?page_size=5000",
         headers=headers,
-        timeout=60,
+        timeout=20,
     )
     r.raise_for_status()
     return r.json()
@@ -49,7 +49,7 @@ def patch_ls_task(api_token: str, task_id: int, new_data: dict) -> None:
         f"{LABEL_STUDIO_URL}/api/tasks/{task_id}",
         headers=headers,
         json={"data": new_data},
-        timeout=60,
+        timeout=20,
     )
     r.raise_for_status()
 
