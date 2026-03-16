@@ -11,3 +11,12 @@ python cohen_kappa_scores.py <csv_path> <rater1_column> <rater2_column>
 The script prints exactly two results:
 - Cohen's Kappa for the first 50 paired scores (or fewer if the file has < 50 rows)
 - Cohen's Kappa for all paired scores
+
+## Hashtag popularity analyzer
+Use `scripts/analyze_hashtags.py` to find the most popular hashtags in your dataset:
+
+```bash
+python scripts/analyze_hashtags.py unified_dataset.csv --top 30 --output hashtag_counts.csv
+```
+
+By default it scans `description`, `tags`, and `title` columns for hashtag tokens (like `#funny`).
