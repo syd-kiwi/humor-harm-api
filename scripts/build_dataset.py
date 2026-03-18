@@ -3,9 +3,9 @@ import re
 import pandas as pd
 import glob
 
-ANNO_CSV = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/02-25.csv"
+ANNO_CSV = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/03-18.csv"
 TASKS_CSV = "/home/kiwi-pandas/Documents/humor-harm-api/scripts/tasks_id_inner_id.csv"
-OUT_CSV = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/02-25_minimal.csv"
+OUT_CSV = "/home/kiwi-pandas/Documents/humor-harm-api/annotation_dashboard/03_18_minimal.csv"
 
 S3_PREFIX = "s3://humor-harm-dataset/dataset-s3/"
 
