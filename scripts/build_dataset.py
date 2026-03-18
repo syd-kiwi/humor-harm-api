@@ -62,8 +62,13 @@ base = base.drop_duplicates(subset=["id"], keep="first")
 print("tasks rows:", len(base))
 print("tasks unique ids:", base["id"].nunique())
 
-# ---- left join to keep ALL task ids ----
-merged = base.merge(out, on="id", how="left")
+# ---- keep only task ids that have annotated videos ----
+annotated = out[out["video_id"].notna()].copy()
+
+print("annotated rows with video_id:", len(annotated))
+print("annotated unique ids with video_id:", annotated["id"].nunique())
+
+merged = base.merge(annotated, on="id", how="inner")
 
 print("merged rows:", len(merged))
 print("merged unique ids:", merged["id"].nunique())
@@ -163,4 +168,3 @@ print("unique ids:", merged["id"].nunique())
 
 merged.to_csv("/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv", index=False)
 print("WROTE unified_dataset.csv")
-
