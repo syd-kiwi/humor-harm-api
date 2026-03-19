@@ -80,12 +80,54 @@ def cohen_kappa_score(labels_a, labels_b):
     return (observed - expected) / (1.0 - expected)
 
 
+def krippendorff_alpha_nominal(grouped_values):
+    total_disagree_pairs = 0
+    total_pairs = 0
+    overall_counts = Counter()
+
+    for values in grouped_values:
+        if len(values) < 2:
+            continue
+
+        counts = Counter(values)
+        n_values = len(values)
+        n_pairs = math.comb(n_values, 2)
+        agree_pairs = sum(math.comb(count, 2) for count in counts.values() if count >= 2)
+
+        total_pairs += n_pairs
+        total_disagree_pairs += n_pairs - agree_pairs
+        overall_counts.update(values)
+
+    if total_pairs == 0:
+        return None
+
+    observed_disagreement = total_disagree_pairs / total_pairs
+
+    total_values = sum(overall_counts.values())
+    if total_values < 2:
+        return None
+
+    expected_agreement = sum(
+        count * (count - 1) for count in overall_counts.values()
+    ) / (total_values * (total_values - 1))
+    expected_disagreement = 1.0 - expected_agreement
+
+    if math.isclose(expected_disagreement, 0.0, abs_tol=1e-12):
+        return 1.0 if math.isclose(observed_disagreement, 0.0, abs_tol=1e-12) else None
+
+    return 1.0 - (observed_disagreement / expected_disagreement)
+
+
 def choose_metadata_columns(df, requested_cols):
     if requested_cols:
         return [col for col in requested_cols if col in df.columns]
 
     preferred = ["video_id", "url", "title"]
     return [col for col in preferred if col in df.columns]
+
+
+def format_metric(value):
+    return "nan" if value is None or pd.isna(value) else f"{value:.3f}"
 
 
 # -----------------------------
@@ -112,6 +154,18 @@ def main():
     )
     ap.add_argument("--top_k", type=int, default=20)
     ap.add_argument(
+        "--krippendorff_min_annotators",
+        type=int,
+        default=3,
+        help="Minimum number of annotators required for an item to be included in Krippendorff's alpha. Defaults to 3 to match the multi-annotator calibration phase.",
+    )
+    ap.add_argument(
+        "--cohen_exact_annotators",
+        type=int,
+        default=2,
+        help="Exact number of annotators required for an item to be included in Cohen's kappa. Defaults to 2 to match the paired-rating phase.",
+    )
+    ap.add_argument(
         "--video_cols",
         nargs="*",
         default=None,
@@ -134,6 +188,7 @@ def main():
 
     per_id_scores = []
     kappa_rows = []
+    krippendorff_rows = []
     videos_used_rows = []
 
     # Compute disagreement per id per field
@@ -143,12 +198,14 @@ def main():
         sub[label] = sub[label].apply(normalize_cell)
         sub = sub.dropna(subset=[label])
 
+        grouped_label_values = []
         for item_id, g in sub.groupby(args.item_col):
             g2 = g.drop_duplicates(subset=[args.annotator_col])
             vals = g2[label].tolist()
             if len(vals) < 2:
                 continue
 
+            grouped_label_values.append(vals)
             rate = pairwise_disagreement_rate(vals)
             if rate is not None:
                 per_id_scores.append(
@@ -159,10 +216,26 @@ def main():
                     }
                 )
 
+            if len(vals) >= args.krippendorff_min_annotators:
+                grouped_label_values.append(vals)
+
+        krippendorff_rows.append(
+            {
+                "field": label,
+                "n_items_used": len(grouped_label_values),
+                "krippendorff_alpha": krippendorff_alpha_nominal(grouped_label_values),
+            }
+        )
+
         # Pairwise Cohen's kappa across annotators for this label
         shared = sub[[args.item_col, args.annotator_col, label] + metadata_cols].drop_duplicates(
             subset=[args.item_col, args.annotator_col]
         )
+        annotator_counts = shared.groupby(args.item_col)[args.annotator_col].nunique()
+        eligible_ids = set(
+            annotator_counts[annotator_counts == args.cohen_exact_annotators].index.tolist()
+        )
+        shared = shared[shared[args.item_col].isin(eligible_ids)]
 
         annotators = sorted(shared[args.annotator_col].astype(str).unique())
         for annotator_a, annotator_b in combinations(annotators, 2):
@@ -241,7 +314,22 @@ def main():
     worst.to_csv(worst_out_path, index=False)
 
     kappa_df = pd.DataFrame(kappa_rows)
+    krippendorff_df = pd.DataFrame(krippendorff_rows)
     videos_used_df = pd.DataFrame(videos_used_rows)
+
+    krippendorff_out_path = csv_path.with_name(f"{csv_path.stem}_krippendorff_summary.csv")
+    krippendorff_df.to_csv(krippendorff_out_path, index=False)
+    print(f"\nWrote {krippendorff_out_path}")
+    print(
+        "\nKrippendorff's alpha summary by field "
+        f"(items with >= {args.krippendorff_min_annotators} annotators):\n"
+    )
+    for _, row in krippendorff_df.iterrows():
+        print(
+            f"field={row['field']}  "
+            f"items_used={int(row['n_items_used'])}  "
+            f"krippendorff_alpha={format_metric(row['krippendorff_alpha'])}"
+        )
 
     if not kappa_df.empty:
         kappa_out_path = csv_path.with_name(f"{csv_path.stem}_cohen_kappa_scores.csv")
@@ -258,6 +346,7 @@ def main():
                 max_cohen_kappa=("cohen_kappa", "max"),
             )
             .reset_index()
+            .merge(krippendorff_df, on="field", how="left")
         )
         kappa_summary_out = csv_path.with_name(
             f"{csv_path.stem}_cohen_kappa_summary.csv"
@@ -273,15 +362,21 @@ def main():
         print(f"Wrote {kappa_summary_out}")
         print(f"Wrote {videos_out_path}")
 
-        print("\nCohen's kappa summary by field:\n")
+        print(
+            "\nCohen's kappa summary by field "
+            f"(items with exactly {args.cohen_exact_annotators} annotators):\n"
+        )
         for _, row in kappa_summary.iterrows():
             mean_kappa = row["mean_cohen_kappa"]
             mean_items = row["mean_items_used"]
+            alpha = row["krippendorff_alpha"]
+            alpha_text = "nan" if pd.isna(alpha) else f"{alpha:.3f}"
             print(
                 f"field={row['field']}  "
                 f"annotator_pairs={int(row['annotator_pairs'])}  "
                 f"mean_items_used={mean_items:.1f}  "
-                f"mean_cohen_kappa={mean_kappa:.3f}"
+                f"mean_cohen_kappa={mean_kappa:.3f}  "
+                f"krippendorff_alpha={alpha_text}"
             )
 
         unique_items = videos_used_df[["field", "id"] + metadata_cols].drop_duplicates()
@@ -294,7 +389,7 @@ def main():
     else:
         print(
             "\nNo Cohen's kappa scores were written because no annotator pairs shared any items "
-            "for the requested labels."
+            f"with exactly {args.cohen_exact_annotators} annotators for the requested labels."
         )
 
     print(f"\nWrote {worst_out_path}")
