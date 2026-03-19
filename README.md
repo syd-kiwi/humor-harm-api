@@ -13,7 +13,7 @@ The script prints exactly two results:
 - Cohen's Kappa for all paired scores
 
 ## Agreement score analyzer
-Use `scripts/annotations/agreement_scores.py` to export disagreement, Cohen's kappa, and Krippendorff's alpha outputs for annotation datasets:
+Use `scripts/annotations/agreement_scores.py` to export disagreement plus phase-appropriate IAA outputs for annotation datasets:
 
 ```bash
 python scripts/annotations/agreement_scores.py <csv_path> --item_col id --annotator_col annotator
@@ -21,9 +21,12 @@ python scripts/annotations/agreement_scores.py <csv_path> --item_col id --annota
 
 The script now writes:
 - `<stem>_worst_ids_overall_top<k>.csv` for the highest-disagreement items
-- `<stem>_cohen_kappa_scores.csv` with pairwise Cohen's kappa by label and annotator pair
-- `<stem>_cohen_kappa_summary.csv` with per-label aggregate kappa stats plus Krippendorff's alpha
+- `<stem>_krippendorff_summary.csv` with per-label Krippendorff's alpha computed from items that have at least 3 annotators by default
+- `<stem>_cohen_kappa_scores.csv` with pairwise Cohen's kappa by label and annotator pair, computed from items that have exactly 2 annotators by default
+- `<stem>_cohen_kappa_summary.csv` with per-label aggregate Cohen's kappa stats for the 2-annotator phase
 - `<stem>_videos_used_for_kappa.csv` listing the item/video rows used in each kappa calculation
+
+This matches the common workflow where Krippendorff's alpha is reported for a 3-annotator calibration phase and Cohen's kappa is reported for a later 2-annotator phase. You can override the defaults with `--krippendorff_min_annotators` and `--cohen_exact_annotators`.
 
 If your input has metadata columns like `video_id`, `url`, and `title`, those are included automatically in the saved `videos_used` file and in the console preview.
 
