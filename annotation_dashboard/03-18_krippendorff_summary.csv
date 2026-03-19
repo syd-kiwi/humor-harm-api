@@ -1,0 +1,8 @@
+field,n_items_used,krippendorff_alpha
+humor_presence,605,0.5988032898450268
+joke_topic,604,0.4907665543281461
+humor_type,605,0.6835845278718822
+dark_intensity,108,0.37566332887268694
+target_category,27,0.8156897054534851
+stand_up,216,0.9526633287084515
+irony_or_satire_present,605,0.612908239983127

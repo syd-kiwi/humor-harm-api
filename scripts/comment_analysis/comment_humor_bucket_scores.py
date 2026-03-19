@@ -59,8 +59,8 @@ class MissingDependencyError(RuntimeError):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset", default="unified_dataset.csv", help="Path to the 1211-row dataset CSV")
-    parser.add_argument("--comments-dir", default="comments", help="Directory containing comment JSON/JSONL files")
+    parser.add_argument("--dataset", default="/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv", help="Path to the 1211-row dataset CSV")
+    parser.add_argument("--comments-dir", default="/home/kiwi-pandas/Documents/humor-harm-api/comments", help="Directory containing comment JSON/JSONL files")
     parser.add_argument(
         "--output-dir",
         default="scripts/comment_analysis/output",

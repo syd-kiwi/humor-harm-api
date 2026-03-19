@@ -4,8 +4,8 @@ import random
 from collections import defaultdict
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-COMMENT_SCORES = os.path.join(BASE_DIR, "comment_level_scores.csv")
-OUTPUT_VIDEO_SCORES = os.path.join(BASE_DIR, "video_level_scores_50.csv")
+COMMENT_SCORES = os.path.join(BASE_DIR, "comment_sentiment_tox_scores_video.csv")
+OUTPUT_VIDEO_SCORES = os.path.join(BASE_DIR, "comment_sentiment_tox_scores_2.csv")
 
 
 def _to_float(value, default=0.0):
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     videos = build_video_scores_with_neutral_screening(
         comment_scores_path=COMMENT_SCORES,
         output_path=OUTPUT_VIDEO_SCORES,
-        neutral_keep_frac=0.5,
+        neutral_keep_frac=1,
     )
     print(f"WROTE: {OUTPUT_VIDEO_SCORES}")
     print(f"VIDEOS: {videos}")

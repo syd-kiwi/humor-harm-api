@@ -594,7 +594,7 @@ def main():
     parser.add_argument("--local_only", default=False, action="store_true")
     parser.add_argument(
         "--dataset_path",
-        default="./unified_dataset.csv",
+        default="/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv",
         help="CSV file with transcript_text and an identifier column (id, video_id, or video).",
     )
     parser.add_argument(
