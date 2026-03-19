@@ -80,6 +80,44 @@ def cohen_kappa_score(labels_a, labels_b):
     return (observed - expected) / (1.0 - expected)
 
 
+def krippendorff_alpha_nominal(grouped_values):
+    total_disagree_pairs = 0
+    total_pairs = 0
+    overall_counts = Counter()
+
+    for values in grouped_values:
+        if len(values) < 2:
+            continue
+
+        counts = Counter(values)
+        n_values = len(values)
+        n_pairs = math.comb(n_values, 2)
+        agree_pairs = sum(math.comb(count, 2) for count in counts.values() if count >= 2)
+
+        total_pairs += n_pairs
+        total_disagree_pairs += n_pairs - agree_pairs
+        overall_counts.update(values)
+
+    if total_pairs == 0:
+        return None
+
+    observed_disagreement = total_disagree_pairs / total_pairs
+
+    total_values = sum(overall_counts.values())
+    if total_values < 2:
+        return None
+
+    expected_agreement = sum(
+        count * (count - 1) for count in overall_counts.values()
+    ) / (total_values * (total_values - 1))
+    expected_disagreement = 1.0 - expected_agreement
+
+    if math.isclose(expected_disagreement, 0.0, abs_tol=1e-12):
+        return 1.0 if math.isclose(observed_disagreement, 0.0, abs_tol=1e-12) else None
+
+    return 1.0 - (observed_disagreement / expected_disagreement)
+
+
 def choose_metadata_columns(df, requested_cols):
     if requested_cols:
         return [col for col in requested_cols if col in df.columns]
@@ -134,6 +172,7 @@ def main():
 
     per_id_scores = []
     kappa_rows = []
+    krippendorff_rows = []
     videos_used_rows = []
 
     # Compute disagreement per id per field
@@ -143,12 +182,14 @@ def main():
         sub[label] = sub[label].apply(normalize_cell)
         sub = sub.dropna(subset=[label])
 
+        grouped_label_values = []
         for item_id, g in sub.groupby(args.item_col):
             g2 = g.drop_duplicates(subset=[args.annotator_col])
             vals = g2[label].tolist()
             if len(vals) < 2:
                 continue
 
+            grouped_label_values.append(vals)
             rate = pairwise_disagreement_rate(vals)
             if rate is not None:
                 per_id_scores.append(
@@ -158,6 +199,14 @@ def main():
                         "disagreement_rate": rate,
                     }
                 )
+
+        krippendorff_rows.append(
+            {
+                "field": label,
+                "n_items_used": len(grouped_label_values),
+                "krippendorff_alpha": krippendorff_alpha_nominal(grouped_label_values),
+            }
+        )
 
         # Pairwise Cohen's kappa across annotators for this label
         shared = sub[[args.item_col, args.annotator_col, label] + metadata_cols].drop_duplicates(
@@ -241,6 +290,7 @@ def main():
     worst.to_csv(worst_out_path, index=False)
 
     kappa_df = pd.DataFrame(kappa_rows)
+    krippendorff_df = pd.DataFrame(krippendorff_rows)
     videos_used_df = pd.DataFrame(videos_used_rows)
 
     if not kappa_df.empty:
@@ -258,6 +308,7 @@ def main():
                 max_cohen_kappa=("cohen_kappa", "max"),
             )
             .reset_index()
+            .merge(krippendorff_df, on="field", how="left")
         )
         kappa_summary_out = csv_path.with_name(
             f"{csv_path.stem}_cohen_kappa_summary.csv"
@@ -277,11 +328,14 @@ def main():
         for _, row in kappa_summary.iterrows():
             mean_kappa = row["mean_cohen_kappa"]
             mean_items = row["mean_items_used"]
+            alpha = row["krippendorff_alpha"]
+            alpha_text = "nan" if pd.isna(alpha) else f"{alpha:.3f}"
             print(
                 f"field={row['field']}  "
                 f"annotator_pairs={int(row['annotator_pairs'])}  "
                 f"mean_items_used={mean_items:.1f}  "
-                f"mean_cohen_kappa={mean_kappa:.3f}"
+                f"mean_cohen_kappa={mean_kappa:.3f}  "
+                f"krippendorff_alpha={alpha_text}"
             )
 
         unique_items = videos_used_df[["field", "id"] + metadata_cols].drop_duplicates()
