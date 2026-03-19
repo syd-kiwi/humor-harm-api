@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -39,6 +40,8 @@ YTDLP_PRINT_FIELDS = [
     ("duration", "%(duration)s"),
     ("categories", "%(categories)s"),
 ]
+
+VIDEO_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -77,10 +80,7 @@ def ensure_yt_dlp() -> str:
     yt_dlp_path = shutil.which("yt-dlp")
     if yt_dlp_path:
         return yt_dlp_path
-    raise SystemExit(
-        "yt-dlp is not installed or not on PATH. Install it first, then rerun "
-        "this script."
-    )
+    return ""
 
 
 def is_blank(value: str | None) -> bool:
@@ -103,6 +103,77 @@ def categories_to_string(raw_value: str) -> str:
                 parts.append(cleaned)
         return "|".join(parts)
     return value
+
+
+def is_valid_video_id(video_id: str) -> bool:
+    return bool(VIDEO_ID_RE.fullmatch(video_id))
+
+
+def normalize_duration(value: str | None) -> str:
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def normalize_view_count(value: str | None) -> str:
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def load_keyword_search_fallbacks(keyword_dir: Path) -> dict[str, dict[str, str]]:
+    best_by_video_id: dict[str, dict[str, str]] = {}
+    for csv_path in sorted(keyword_dir.glob("*.csv")):
+        with csv_path.open(newline="", encoding="utf-8") as handle:
+            reader = csv.DictReader(handle)
+            if not reader.fieldnames or "video_id" not in reader.fieldnames:
+                continue
+            for row in reader:
+                video_id = (row.get("video_id") or "").strip()
+                if not is_valid_video_id(video_id):
+                    continue
+
+                title = (row.get("title") or "").strip()
+                view_count = normalize_view_count(row.get("view_count"))
+                duration = normalize_duration(
+                    row.get("duration_seconds") or row.get("duration")
+                )
+                if not title and not view_count and not duration:
+                    continue
+
+                existing = best_by_video_id.get(video_id)
+                existing_views = int(existing.get("view_count") or 0) if existing else -1
+                current_views = int(view_count or 0)
+
+                if existing is None or current_views >= existing_views:
+                    best_by_video_id[video_id] = {
+                        "url": f"https://www.youtube.com/watch?v={video_id}",
+                        "title": title,
+                        "view_count": view_count,
+                        "duration": duration,
+                    }
+    return best_by_video_id
+
+
+def repair_invalid_video_ids(rows: list[dict[str, str]], video_id_column: str) -> int:
+    transcript_to_valid_video_id: dict[str, str] = {}
+    for row in rows:
+        video_id = (row.get(video_id_column) or "").strip()
+        transcript = (row.get("transcript_text") or "").strip()
+        if transcript and is_valid_video_id(video_id):
+            transcript_to_valid_video_id.setdefault(transcript, video_id)
+
+    repaired = 0
+    for row in rows:
+        video_id = (row.get(video_id_column) or "").strip()
+        transcript = (row.get("transcript_text") or "").strip()
+        if not transcript or is_valid_video_id(video_id):
+            continue
+        replacement = transcript_to_valid_video_id.get(transcript)
+        if replacement:
+            row[video_id_column] = replacement
+            repaired += 1
+    return repaired
 
 
 def fetch_metadata(video_id: str, yt_dlp_path: str) -> dict[str, str]:
@@ -167,6 +238,14 @@ def main() -> int:
             f"Missing required metadata columns in {csv_path}: {missing_columns}"
         )
 
+    repaired_video_ids = repair_invalid_video_ids(rows, args.video_id_column)
+    if repaired_video_ids:
+        print(f"repaired invalid video IDs from duplicate transcripts: {repaired_video_ids}")
+
+    keyword_fallbacks = load_keyword_search_fallbacks(csv_path.parent / "keyword_searches")
+    if keyword_fallbacks:
+        print(f"keyword-search fallback records loaded: {len(keyword_fallbacks)}")
+
     video_ids_to_fetch: list[str] = []
     for row in rows:
         video_id = (row.get(args.video_id_column) or "").strip()
@@ -181,16 +260,31 @@ def main() -> int:
     print(f"rows in dataset: {len(rows)}")
     print(f"video IDs to backfill: {len(video_ids_to_fetch)}")
 
+    fallback_updates = 0
+    for row in rows:
+        video_id = (row.get(args.video_id_column) or "").strip()
+        fallback = keyword_fallbacks.get(video_id)
+        if not fallback:
+            continue
+        for field in ("url", "title", "view_count", "duration"):
+            if is_blank(row.get(field)) and fallback.get(field):
+                row[field] = fallback[field]
+                fallback_updates += 1
+    print(f"metadata fields updated from local keyword fallbacks: {fallback_updates}")
+
     fetched_by_video_id: dict[str, dict[str, str]] = {}
     failures: list[tuple[str, str]] = []
 
-    for index, video_id in enumerate(video_ids_to_fetch, start=1):
-        try:
-            fetched_by_video_id[video_id] = fetch_metadata(video_id, yt_dlp_path)
-            print(f"[{index}/{len(video_ids_to_fetch)}] fetched {video_id}")
-        except Exception as exc:  # noqa: BLE001
-            failures.append((video_id, str(exc)))
-            print(f"[{index}/{len(video_ids_to_fetch)}] failed {video_id}: {exc}", file=sys.stderr)
+    if yt_dlp_path:
+        for index, video_id in enumerate(video_ids_to_fetch, start=1):
+            try:
+                fetched_by_video_id[video_id] = fetch_metadata(video_id, yt_dlp_path)
+                print(f"[{index}/{len(video_ids_to_fetch)}] fetched {video_id}")
+            except Exception as exc:  # noqa: BLE001
+                failures.append((video_id, str(exc)))
+                print(f"[{index}/{len(video_ids_to_fetch)}] failed {video_id}: {exc}", file=sys.stderr)
+    else:
+        print("yt-dlp not found on PATH; skipping live YouTube lookups.", file=sys.stderr)
 
     updates = 0
     for row in rows:
@@ -217,7 +311,7 @@ def main() -> int:
             writer.writeheader()
             writer.writerows(rows)
 
-    print(f"metadata fields updated: {updates}")
+    print(f"metadata fields updated from yt-dlp: {updates}")
     print(f"output written to: {destination}")
 
     if failures:

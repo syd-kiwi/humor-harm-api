@@ -39,21 +39,25 @@ python scripts/analyze_hashtags.py unified_dataset.csv --top 30 --output hashtag
 
 By default it scans `description`, `tags`, and `title` columns for hashtag tokens (like `#funny`).
 
+## Fill missing YouTube metadata
+Use `scripts/fill_missing_youtube_metadata.py` to backfill missing metadata in `unified_dataset.csv` from the `video_id` column with `yt-dlp`.
 
-## Comment scoring by humor bucket
-Use `scripts/comment_analysis/comment_humor_bucket_scores.py` to score YouTube comments for the 1,211-row dataset and aggregate results for `not_humor`, `regular_humor`, and `dark_humor`.
+Example:
 
 ```bash
-python scripts/comment_analysis/comment_humor_bucket_scores.py \
-  --dataset unified_dataset.csv \
-  --comments-dir comments \
-  --output-dir scripts/comment_analysis/output
+python scripts/fill_missing_youtube_metadata.py unified_dataset.csv --write-in-place
 ```
 
-Outputs written to the chosen `output-dir`:
-- `comment_scores_by_humor_bucket.csv` with comment-level sentiment, toxicity, and emotion scores
-- `video_scores_by_humor_bucket.csv` with per-video mean scores
-- `humor_bucket_comment_summary.csv` with comment-weighted averages per humor bucket
-- `humor_bucket_video_summary.csv` with video-weighted averages per humor bucket
+The script checks rows with blank values in these columns and fills them from YouTube:
+- `url`
+- `channel`
+- `title`
+- `uploader_id`
+- `uploader`
+- `channel_id`
+- `upload_date`
+- `view_count`
+- `duration`
+- `categories`
 
-The script expects `transformers`, `detoxify`, and their runtime dependencies (for example `torch`) to be installed.
+If `yt-dlp` is unavailable, it still uses repo-local `keyword_searches/*.csv` files to fill deterministic fallback values for `url`, `title`, `view_count`, and `duration`, and it also repairs obviously bad `video_id` values when the same transcript already exists with a valid 11-character YouTube ID.
