@@ -251,38 +251,59 @@ def make_client(model_name: str):
 
 # -----------------------------
 # CSV input (pandas)
-# Required columns: video, transcript_text
+# Supports unified dataset exports.
+# Required columns: transcript_text plus one of id, video_id, or video
 # -----------------------------
+def _first_present_str(row: pd.Series, columns: List[str]) -> str:
+    for column in columns:
+        if column not in row.index:
+            continue
+        value = row[column]
+        if pd.isna(value):
+            continue
+        value_str = str(value).strip()
+        if value_str:
+            return value_str
+    return ""
+
+
 def iter_csv_records_unique(dataset_path: str):
     df = pd.read_csv(dataset_path)
 
-    required = ["video", "transcript_text"]
+    required = ["transcript_text"]
     missing = [c for c in required if c not in df.columns]
     if missing:
         raise ValueError(f"CSV missing required columns: {missing}. Found: {list(df.columns)}")
+
+    if not any(column in df.columns for column in ["id", "video_id", "video"]):
+        raise ValueError(
+            "CSV must include one identifier column from ['id', 'video_id', 'video']. "
+            f"Found: {list(df.columns)}"
+        )
 
     seen = set()
     n_dupes = 0
 
     for idx, row in df.iterrows():
-        video = row["video"]
-        transcript = row["transcript_text"]
+        record_id = _first_present_str(row, ["id", "video_id", "video"])
+        video = _first_present_str(row, ["video_id", "video"])
+        transcript = _first_present_str(row, ["transcript_text"])
 
-        video_str = "" if pd.isna(video) else str(video).strip()
-        transcript_str = "" if pd.isna(transcript) else str(transcript).strip()
-
-        # Enforce uniqueness by video id (QID)
-        qid = video_str if video_str else str(idx)
+        qid = record_id or str(idx)
         if qid in seen:
             n_dupes += 1
             continue
 
         seen.add(qid)
-        obj = {"video": video_str, "transcript_text": transcript_str}
+        obj = {
+            "id": record_id,
+            "video": video,
+            "transcript_text": transcript,
+        }
         yield obj, idx
 
     if n_dupes > 0:
-        print(f"[i] Dropped {n_dupes} duplicate rows based on video/QID uniqueness")
+        print(f"[i] Dropped {n_dupes} duplicate rows based on record id/QID uniqueness")
 
 
 def get_content_text(obj: Dict[str, Any]) -> str:
@@ -294,9 +315,15 @@ def get_content_text(obj: Dict[str, Any]) -> str:
 
 def build_annotation_prompt(obj: Dict[str, Any]) -> str:
     transcript = get_content_text(obj)
+    record_id = obj.get("id", "")
     video = obj.get("video", "")
 
-    metadata_block = f"video: {video}" if video else "None"
+    metadata_fields = []
+    if record_id:
+        metadata_fields.append(f"id: {record_id}")
+    if video:
+        metadata_fields.append(f"video: {video}")
+    metadata_block = "\n".join(metadata_fields) if metadata_fields else "None"
 
     return (
         "Annotate the following content using the target schema.\n\n"
@@ -418,19 +445,12 @@ def parse_annotation(raw_output: str) -> Tuple[Dict[str, Any], List[str]]:
 def write_outputs(rows: List[Dict[str, Any]], model_tag: str, output_path: str):
     os.makedirs(output_path, exist_ok=True)
 
-    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
-    with open(jsonl_path, "w", encoding="utf-8") as f:
-        for row in rows:
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
-
     csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
     pd.DataFrame(rows).to_csv(csv_path, index=False)
 
 
 def load_done_qids(output_path: str, model_tag: str) -> set:
     csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
-    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
-
     done = set()
 
     if os.path.exists(csv_path):
@@ -441,37 +461,18 @@ def load_done_qids(output_path: str, model_tag: str) -> set:
         except Exception:
             pass
 
-    if os.path.exists(jsonl_path):
-        try:
-            with open(jsonl_path, "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    obj = json.loads(line)
-                    qid = obj.get("QID")
-                    if qid is not None:
-                        done.add(str(qid))
-        except Exception:
-            pass
-
     return done
 
 
 def load_existing_rows(output_path: str, model_tag: str) -> List[Dict[str, Any]]:
-    jsonl_path = os.path.join(output_path, f"{model_tag}_annotations.jsonl")
-    rows: List[Dict[str, Any]] = []
-    if os.path.exists(jsonl_path):
-        try:
-            with open(jsonl_path, "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    rows.append(json.loads(line))
-        except Exception:
-            pass
-    return rows
+    csv_path = os.path.join(output_path, f"{model_tag}_annotations.csv")
+    if not os.path.exists(csv_path):
+        return []
+
+    try:
+        return pd.read_csv(csv_path).to_dict(orient="records")
+    except Exception:
+        return []
 
 
 # -----------------------------
@@ -489,7 +490,7 @@ def online_llm_annotate_csv(client, dataset_path: str, model_name: str, output_p
         print(f"[i] {model_tag}: loaded {len(done_qids)} done QIDs, will skip them")
 
     for obj, idx in iter_csv_records_unique(dataset_path):
-        qid = obj.get("video", "") or str(idx)
+        qid = obj.get("id", "") or obj.get("video", "") or str(idx)
 
         # Enforce uniqueness across the output too
         if str(qid) in done_qids:
@@ -547,7 +548,7 @@ def local_llm_annotate_csv(model_path: str, dataset_path: str, output_path: str,
         print(f"[i] {model_tag}: loaded {len(done_qids)} done QIDs, will skip them")
 
     for obj, idx in iter_csv_records_unique(dataset_path):
-        qid = obj.get("video", "") or str(idx)
+        qid = obj.get("id", "") or obj.get("video", "") or str(idx)
 
         if str(qid) in done_qids:
             if verbose:
@@ -593,8 +594,8 @@ def main():
     parser.add_argument("--local_only", default=False, action="store_true")
     parser.add_argument(
         "--dataset_path",
-        default="./questions.csv",
-        help="CSV file with columns: video, transcript_text",
+        default="./unified_dataset.csv",
+        help="CSV file with transcript_text and an identifier column (id, video_id, or video).",
     )
     parser.add_argument(
         "--output_path",
