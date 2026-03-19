@@ -35,3 +35,26 @@ python scripts/analyze_hashtags.py unified_dataset.csv --top 30 --output hashtag
 ```
 
 By default it scans `description`, `tags`, and `title` columns for hashtag tokens (like `#funny`).
+
+## Fill missing YouTube metadata
+Use `scripts/fill_missing_youtube_metadata.py` to backfill missing metadata in `unified_dataset.csv` from the `video_id` column with `yt-dlp`.
+
+Example:
+
+```bash
+python scripts/fill_missing_youtube_metadata.py unified_dataset.csv --write-in-place
+```
+
+The script checks rows with blank values in these columns and fills them from YouTube:
+- `url`
+- `channel`
+- `title`
+- `uploader_id`
+- `uploader`
+- `channel_id`
+- `upload_date`
+- `view_count`
+- `duration`
+- `categories`
+
+It expects `yt-dlp` to be installed and available on your `PATH`.
