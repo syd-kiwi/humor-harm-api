@@ -38,3 +38,22 @@ python scripts/analyze_hashtags.py unified_dataset.csv --top 30 --output hashtag
 ```
 
 By default it scans `description`, `tags`, and `title` columns for hashtag tokens (like `#funny`).
+
+
+## Comment scoring by humor bucket
+Use `scripts/comment_analysis/comment_humor_bucket_scores.py` to score YouTube comments for the 1,211-row dataset and aggregate results for `not_humor`, `regular_humor`, and `dark_humor`.
+
+```bash
+python scripts/comment_analysis/comment_humor_bucket_scores.py \
+  --dataset unified_dataset.csv \
+  --comments-dir comments \
+  --output-dir scripts/comment_analysis/output
+```
+
+Outputs written to the chosen `output-dir`:
+- `comment_scores_by_humor_bucket.csv` with comment-level sentiment, toxicity, and emotion scores
+- `video_scores_by_humor_bucket.csv` with per-video mean scores
+- `humor_bucket_comment_summary.csv` with comment-weighted averages per humor bucket
+- `humor_bucket_video_summary.csv` with video-weighted averages per humor bucket
+
+The script expects `transformers`, `detoxify`, and their runtime dependencies (for example `torch`) to be installed.

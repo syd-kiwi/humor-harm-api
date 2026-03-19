@@ -205,6 +205,7 @@ def main():
             if len(vals) < 2:
                 continue
 
+            grouped_label_values.append(vals)
             rate = pairwise_disagreement_rate(vals)
             if rate is not None:
                 per_id_scores.append(
@@ -345,6 +346,7 @@ def main():
                 max_cohen_kappa=("cohen_kappa", "max"),
             )
             .reset_index()
+            .merge(krippendorff_df, on="field", how="left")
         )
         kappa_summary_out = csv_path.with_name(
             f"{csv_path.stem}_cohen_kappa_summary.csv"
@@ -367,11 +369,14 @@ def main():
         for _, row in kappa_summary.iterrows():
             mean_kappa = row["mean_cohen_kappa"]
             mean_items = row["mean_items_used"]
+            alpha = row["krippendorff_alpha"]
+            alpha_text = "nan" if pd.isna(alpha) else f"{alpha:.3f}"
             print(
                 f"field={row['field']}  "
                 f"annotator_pairs={int(row['annotator_pairs'])}  "
                 f"mean_items_used={mean_items:.1f}  "
-                f"mean_cohen_kappa={mean_kappa:.3f}"
+                f"mean_cohen_kappa={mean_kappa:.3f}  "
+                f"krippendorff_alpha={alpha_text}"
             )
 
         unique_items = videos_used_df[["field", "id"] + metadata_cols].drop_duplicates()
