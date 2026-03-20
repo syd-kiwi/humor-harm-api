@@ -75,9 +75,9 @@ ALLOWED_VALUES = {
 
 MODEL_LIST = [
     #"deepseek-ai/DeepSeek-V3.1", done
-    #"gemini-3.1-pro-preview",
-    "gemini-2.5-flash"
-    #"gpt-5-mini-2025-08-07", done
+    "gemini-3-flash-preview",
+    #"gemini-2.5-flash"
+    #"gpt-5-mini-2025-08-07",
     #"claude-sonnet-4-6", done
 ]
 
@@ -132,7 +132,7 @@ def get_answer_openai(client: OpenAI, model_name: str, system_prompt: str, quest
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": question},
         ],
-        temperature=0,
+        temperature=1,
     )
     return response.choices[0].message.content.strip()
 
