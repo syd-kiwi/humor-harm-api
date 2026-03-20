@@ -16901,3 +16901,3180 @@ QID,RawResponse,ParseIssues,humor_presence,joke_topic,rhetorical_device,stand_up
   ""note"": ""Humor comes from the chaotic dialogue during a game and the playful 'punishment' for one participant.""
 }
 ```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,Humor comes from the chaotic dialogue during a game and the playful 'punishment' for one participant.
+1847,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the comedic persona of Uncle Roger, satirizing celebrity chefs and their marketing, and his 'feud' with Jamie Oliver.""
+}
+```",,Humor,['Celebrity and pop culture'],"['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor comes from the comedic persona of Uncle Roger, satirizing celebrity chefs and their marketing, and his 'feud' with Jamie Oliver."
+1849,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""A satirical monologue that ironically redefines the First Amendment and free speech, then mocks various political talking points and misinformation, particularly regarding January 6th.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",Yes,Regular Humor,[],,"A satirical monologue that ironically redefines the First Amendment and free speech, then mocks various political talking points and misinformation, particularly regarding January 6th."
+1852,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from reminiscing about the absurdities of old phone plans (limited minutes, free after 5 PM) and how people prioritized saving money over immediate communication, even in emergencies like death.""
+}
+```",,Humor,['Money'],['Irony'],Yes,Dark Humor,['Violence / Death'],2 - Moderate,"The humor comes from reminiscing about the absurdities of old phone plans (limited minutes, free after 5 PM) and how people prioritized saving money over immediate communication, even in emergencies like death."
+1854,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated, chaotic, and absurd reactions to a frustrating situation, likely in a game or during content creation. The disproportionate anger over minor issues (like something costing ten dollars or a 'bear developer') creates an ironic comedic effect.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from the speaker's exaggerated, chaotic, and absurd reactions to a frustrating situation, likely in a game or during content creation. The disproportionate anger over minor issues (like something costing ten dollars or a 'bear developer') creates an ironic comedic effect."
+1855,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the playful bickering between friends about wedding roles and a humorous 'revenge' for not being chosen as best man, along with a lighthearted jab at the end.""
+}
+```",,Humor,"['Relationships', 'Family']",['None of these'],No,Regular Humor,[],,"The humor comes from the playful bickering between friends about wedding roles and a humorous 'revenge' for not being chosen as best man, along with a lighthearted jab at the end."
+1856,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated and ironic complaint that Dwayne 'The Rock' Johnson has lessened his talent. A racial slur is present in the content, but it is not the target of the humor.""
+}
+```",,Humor,['Celebrity and pop culture'],['Irony'],No,Regular Humor,[],,"The humor comes from the speaker's exaggerated and ironic complaint that Dwayne 'The Rock' Johnson has lessened his talent. A racial slur is present in the content, but it is not the target of the humor."
+1858,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Gender / Sex related""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from the shock and crudeness of the literal translations of Roman slang, particularly 'F-U and your dead ancestors' and 'These penises'.""
+}
+```",,Humor,['Other'],['None of these'],No,Dark Humor,"['Violence / Death', 'Gender / Sex related']",2 - Moderate,"The humor comes from the shock and crudeness of the literal translations of Roman slang, particularly 'F-U and your dead ancestors' and 'These penises'."
+1859,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from taking the idiom \""beauty is only skin deep\"" literally, describing the grotesque image of a handsome person after being skinned.""
+}
+```",,Humor,['Other'],['Irony'],Yes,Dark Humor,['Violence / Death'],3 - Severe,"The humor comes from taking the idiom ""beauty is only skin deep"" literally, describing the grotesque image of a handsome person after being skinned."
+1862,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Work"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian reacts to an audience member rushing the stage, making jokes about the security's inaction, the unexpected nature of the event, and the absurdity of the situation.""
+}
+```",,Humor,"['Work', 'Other']",['Irony'],Yes,Regular Humor,[],,"The comedian reacts to an audience member rushing the stage, making jokes about the security's inaction, the unexpected nature of the event, and the absurdity of the situation."
+1863,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Work""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The speaker uses sarcasm when talking about other creators and then makes an exaggerated, possibly self-deprecating, claim about their own earnings on the app. The phrase \""you're so fucking entirely as $50,000 alive\"" seems like a sarcastic or misspoken jab.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Work']",['Irony'],Yes,Regular Humor,[],,"The speaker uses sarcasm when talking about other creators and then makes an exaggerated, possibly self-deprecating, claim about their own earnings on the app. The phrase ""you're so fucking entirely as $50,000 alive"" seems like a sarcastic or misspoken jab."
+1865,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a host/commentator's exaggerated reactions to game show events and a misdirection joke playing on the numbers '2011' and '9-11', where the speaker quickly clarifies they were not referring to the sensitive event.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from a host/commentator's exaggerated reactions to game show events and a misdirection joke playing on the numbers '2011' and '9-11', where the speaker quickly clarifies they were not referring to the sensitive event."
+1866,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a serious discussion about illegal immigration and human trafficking, including a confrontational phone call with an alleged smuggler. No humor is present.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a serious discussion about illegal immigration and human trafficking, including a confrontational phone call with an alleged smuggler. No humor is present."
+1870,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker playfully debunking the assumption that the name 'O'Shade' is Irish, offering a humorous, culturally specific explanation for how Black people sometimes choose names, often based on simple observations rather than deep heritage.""
+}
+```",,Humor,['Other'],['Irony'],Yes,Regular Humor,[],,"The humor comes from the speaker playfully debunking the assumption that the name 'O'Shade' is Irish, offering a humorous, culturally specific explanation for how Black people sometimes choose names, often based on simple observations rather than deep heritage."
+1871,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the exaggerated portrayal of a drill sergeant and the recruits' reactions, with an ironic twist at the end where the sergeant lets them go after all the strictness.""
+}
+```",,Humor,['Other'],"['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor comes from the exaggerated portrayal of a drill sergeant and the recruits' reactions, with an ironic twist at the end where the sergeant lets them go after all the strictness."
+1873,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor critiques societal addiction to social media attention and validation, contrasting it with opioid addiction.""
+}
+```",,Humor,['Politics and society'],['Satire'],Yes,Regular Humor,[],,"The humor critiques societal addiction to social media attention and validation, contrasting it with opioid addiction."
+1875,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the literal interpretation of a 'chocolate cake shake' and the unexpected, exaggerated way it's prepared, leading to a surprising and messy outcome.""
+}
+```",,Humor,['Other'],['None of these'],Yes,Regular Humor,[],,"The humor comes from the literal interpretation of a 'chocolate cake shake' and the unexpected, exaggerated way it's prepared, leading to a surprising and messy outcome."
+1877,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a commentary on a past event involving a person named Tati and a video titled 'Bicister'. The speaker discusses 'half truths' and 'behind the scenes' of this event. There is no clear humor present.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,The content is a commentary on a past event involving a person named Tati and a video titled 'Bicister'. The speaker discusses 'half truths' and 'behind the scenes' of this event. There is no clear humor present.
+1878,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""A comedic sketch about a disastrous plane flight, with an incompetent pilot and the eventual appearance of Homelander from 'The Boys'.""
+}
+```",,Humor,"['Other', 'Celebrity and pop culture']","['Irony', 'Satire']",No,Dark Humor,['Violence / Death'],3 - Severe,"A comedic sketch about a disastrous plane flight, with an incompetent pilot and the eventual appearance of Homelander from 'The Boys'."
+1882,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability"",
+    ""Gender / Sex related""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor involves explicit sexual jokes and innuendo directed at a person's prosthetic arm.""
+}
+```",,Humor,['Other'],['None of these'],No,Dark Humor,"['Disability', 'Gender / Sex related']",2 - Moderate,The humor involves explicit sexual jokes and innuendo directed at a person's prosthetic arm.
+1884,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""School"",
+    ""Politics and society"",
+    ""Crime and law enforcement"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor is dark due to the blunt and dismissive comparison of Tupac and Biggie's deaths ('got shot') to historical assassinations, making light of the gravity of death for comedic effect.""
+}
+```",,Humor,"['School', 'Politics and society', 'Crime and law enforcement', 'Celebrity and pop culture']","['Irony', 'Satire']",Yes,Dark Humor,['Violence / Death'],2 - Moderate,"The humor is dark due to the blunt and dismissive comparison of Tupac and Biggie's deaths ('got shot') to historical assassinations, making light of the gravity of death for comedic effect."
+1886,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the unexpected twist where one contestant uses a plane to reach a high altitude and then jumps out just before the timer ends, exploiting a loophole in the rule 'can't be in a plane when the timer hits zero'.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from the unexpected twist where one contestant uses a plane to reach a high altitude and then jumps out just before the timer ends, exploiting a loophole in the rule 'can't be in a plane when the timer hits zero'."
+1890,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated boasting about an expensive watch and playful insults directed at the audience regarding their perceived lack of wealth.""
+}
+```",,Humor,['Money'],['None of these'],Yes,Regular Humor,[],,The humor comes from the speaker's exaggerated boasting about an expensive watch and playful insults directed at the audience regarding their perceived lack of wealth.
+1892,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Money"",
+    ""Family"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor relies heavily on sexual innuendo and wordplay, particularly with the 'chess' and 'in and out' jokes.""
+}
+```",,Humor,"['Relationships', 'Money', 'Family', 'Other']",['None of these'],No,Regular Humor,[],,"The humor relies heavily on sexual innuendo and wordplay, particularly with the 'chess' and 'in and out' jokes."
+1894,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from the relatable frustration of trying to recall details with an elderly sibling, culminating in a dark punchline about wishing for someone's death to end the conversation.""
+}
+```",,Humor,['Family'],['None of these'],Yes,Dark Humor,['Violence / Death'],2 - Moderate,"The humor comes from the relatable frustration of trying to recall details with an elderly sibling, culminating in a dark punchline about wishing for someone's death to end the conversation."
+1895,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from an aggressive character using a fake name and making crude remarks about a woman's appearance and age.""
+}
+```",,Humor,"['Relationships', 'Other']",['Irony'],No,Dark Humor,['Other Sensitive Target'],2 - Moderate,The humor comes from an aggressive character using a fake name and making crude remarks about a woman's appearance and age.
+1898,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the exaggerated self-importance and the casual, almost flippant justification for a major international policy decision, satirizing political rhetoric.""
+}
+```",,Humor,['Politics and society'],['Satire'],No,Regular Humor,[],,"The humor comes from the exaggerated self-importance and the casual, almost flippant justification for a major international policy decision, satirizing political rhetoric."
+1899,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated bravado towards his wife, which is then comically undercut by the reveal that he was actually talking to his mother, implying he's scared of his wife.""
+}
+```",,Humor,"['Relationships', 'Family']",['Irony'],Yes,Regular Humor,[],,"The humor comes from the speaker's exaggerated bravado towards his wife, which is then comically undercut by the reveal that he was actually talking to his mother, implying he's scared of his wife."
+1900,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a double entendre about \""rigidity\"" in a sexual context related to \""date night\"" and a wife, followed by playful banter and clarification.""
+}
+```",,Humor,['Relationships'],['None of these'],No,Regular Humor,[],,"The humor comes from a double entendre about ""rigidity"" in a sexual context related to ""date night"" and a wife, followed by playful banter and clarification."
+1901,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a straightforward conversation about collaborating on a music video. There is no discernible humor.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,The content is a straightforward conversation about collaborating on a music video. There is no discernible humor.
+1903,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The comedian roasts an audience member's daughter based on a photo, making jokes about her appearance, perceived sexuality, and dating app profile.""
+}
+```",,Humor,"['Relationships', 'Family', 'Celebrity and pop culture']",['None of these'],Yes,Dark Humor,"['Gender / Sex related', 'Other Sensitive Target']",2 - Moderate,"The comedian roasts an audience member's daughter based on a photo, making jokes about her appearance, perceived sexuality, and dating app profile."
+1905,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is very explicit and relies heavily on sexual innuendo and double entendres related to dating and sex.""
+}
+```",,Humor,['Relationships'],['None of these'],No,Regular Humor,[],,The humor is very explicit and relies heavily on sexual innuendo and double entendres related to dating and sex.
+1906,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurdity of the elaborate request to get a coconut from Hawaii for $500, which turns out to be a product placement for a Nickelodeon show.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the absurdity of the elaborate request to get a coconut from Hawaii for $500, which turns out to be a product placement for a Nickelodeon show."
+1909,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content describes a product (realistic face masks) and a demonstration of its effectiveness, presented factually. No clear humor detected.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content describes a product (realistic face masks) and a demonstration of its effectiveness, presented factually. No clear humor detected."
+1910,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The speaker humorously advocates for crack cocaine over fentanyl, arguing that crack users are more resilient and productive, while fentanyl users die quickly. This is a dark comedic take on drug use and its consequences.""
+}
+```",,Humor,['Other'],['Irony'],Yes,Dark Humor,['Violence / Death'],3 - Severe,"The speaker humorously advocates for crack cocaine over fentanyl, arguing that crack users are more resilient and productive, while fentanyl users die quickly. This is a dark comedic take on drug use and its consequences."
+1911,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor comes from the speaker's self-deprecating remarks about his preparation, his curmudgeonly and contrarian opinions on popular films, and the use of humorous descriptors like 'Fun Junk' for Sunset Boulevard. The extreme praise for 'Streetcar' after being critical of so many others also creates a comedic contrast.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"Humor comes from the speaker's self-deprecating remarks about his preparation, his curmudgeonly and contrarian opinions on popular films, and the use of humorous descriptors like 'Fun Junk' for Sunset Boulevard. The extreme praise for 'Streetcar' after being critical of so many others also creates a comedic contrast."
+1913,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the rapid-fire, exaggerated banter and playful teasing between multiple speakers about sports achievements, athletes, and social media fame.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Other']",['None of these'],No,Regular Humor,[],,"The humor comes from the rapid-fire, exaggerated banter and playful teasing between multiple speakers about sports achievements, athletes, and social media fame."
+1915,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor relies on sexual innuendo and double entendres, misinterpreting bowling terms for suggestive acts. The 'bop it, twist it, pull it, spit on it' line is a clear example.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor relies on sexual innuendo and double entendres, misinterpreting bowling terms for suggestive acts. The 'bop it, twist it, pull it, spit on it' line is a clear example."
+1917,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurd claim that a former president will run for a third term despite the clear constitutional amendment, and the idea of a 'team of people' working to circumvent it.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Regular Humor,[],,"The humor comes from the absurd claim that a former president will run for a third term despite the clear constitutional amendment, and the idea of a 'team of people' working to circumvent it."
+1919,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""A comedian jokes with an audience member about her father dying while watching his Netflix special, making increasingly dark comments about killing him and being glad he's dead.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Dark Humor,['Violence / Death'],3 - Severe,"A comedian jokes with an audience member about her father dying while watching his Netflix special, making increasingly dark comments about killing him and being glad he's dead."
+1920,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from a self-deprecating joke where the speaker combines 'Jesse Eisenberg' with 'Hindenburg', comparing themselves to a historical disaster.""
+}
+```",,Humor,['Other'],['Irony'],No,Dark Humor,['Violence / Death'],3 - Severe,"The humor comes from a self-deprecating joke where the speaker combines 'Jesse Eisenberg' with 'Hindenburg', comparing themselves to a historical disaster."
+1921,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor includes observational comedy, self-deprecation, and a dark twist about learning 'how to die', touching on gender stereotypes.""
+}
+```",,Humor,['Other'],['None of these'],Yes,Dark Humor,"['Gender / Sex related', 'Violence / Death']",2 - Moderate,"The humor includes observational comedy, self-deprecation, and a dark twist about learning 'how to die', touching on gender stereotypes."
+1922,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker building up an exaggerated, heroic childhood memory of a dance recital, only to reveal the much more selfish and mundane truth with a 'just kidding' punchline.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Regular Humor,[],,"The humor comes from the speaker building up an exaggerated, heroic childhood memory of a dance recital, only to reveal the much more selfish and mundane truth with a 'just kidding' punchline."
+1924,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Disability"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor is very dark, making light of a deceased person, prostitution, and disability within the context of a eulogy. The final lines about CBD seem to be a separate, unrelated comedic bit.""
+}
+```",,Humor,"['Relationships', 'Other']",['None of these'],Yes,Dark Humor,"['Gender / Sex related', 'Disability', 'Violence / Death']",3 - Severe,"The humor is very dark, making light of a deceased person, prostitution, and disability within the context of a eulogy. The final lines about CBD seem to be a separate, unrelated comedic bit."
+1925,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the ironic and unhelpful advice given by the nephew during a tornado warning, and his subsequent focus on the speaker's cursing rather than the emergency.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Regular Humor,[],,"The humor comes from the ironic and unhelpful advice given by the nephew during a tornado warning, and his subsequent focus on the speaker's cursing rather than the emergency."
+1927,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""A silly debate about whether all sandwiches are better pressed, including a humorous scenario involving a baguette in Paris.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"A silly debate about whether all sandwiches are better pressed, including a humorous scenario involving a baguette in Paris."
+1931,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Crime"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The humor comes from the commentator's misinterpretations and the hyperbolic statement about being 'escorted to hell' after suggesting the person looks like they're being arrested.""
+}
+```",,Humor,['Crime and law enforcement'],['None of these'],No,Dark Humor,"['Crime', 'Violence / Death']",1 - Mild,The humor comes from the commentator's misinterpretations and the hyperbolic statement about being 'escorted to hell' after suggesting the person looks like they're being arrested.
+1933,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family"",
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Crime""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from the absurdity of receiving a collect call from jail from an ex-partner's friend, and the schadenfreude regarding the ex's situation (being in jail, lack of family support).""
+}
+```",,Humor,"['Relationships', 'Family', 'Crime and law enforcement']",['None of these'],No,Dark Humor,['Crime'],2 - Moderate,"The humor comes from the absurdity of receiving a collect call from jail from an ex-partner's friend, and the schadenfreude regarding the ex's situation (being in jail, lack of family support)."
+1934,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurdity and incompetence of cooking while high, leading to bad food and funny observations about it.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the absurdity and incompetence of cooking while high, leading to bad food and funny observations about it."
+1935,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Race / Ethnicity""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""A stand-up comedian re-enacts and comments on an SNL sketch about the 2016 US election results. The humor is dark and satirical, focusing on the shock, racism, sexism, and xenophobia revealed or highlighted by the election outcome, with lines directly calling out 'racists,' 'America is racist,' 'all white,' and stereotypes about immigrants.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",Yes,Dark Humor,"['Gender / Sex related', 'Race / Ethnicity']",3 - Severe,"A stand-up comedian re-enacts and comments on an SNL sketch about the 2016 US election results. The humor is dark and satirical, focusing on the shock, racism, sexism, and xenophobia revealed or highlighted by the election outcome, with lines directly calling out 'racists,' 'America is racist,' 'all white,' and stereotypes about immigrants."
+1937,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content describes a reaction to a surprise, not a humorous piece itself.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content describes a reaction to a surprise, not a humorous piece itself."
+1938,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor exaggerates the role of 'rednecks' as the ultimate, self-sufficient defense force for the US, outperforming the military.""
+}
+```",,Humor,['Politics and society'],['Satire'],Yes,Regular Humor,[],,"The humor exaggerates the role of 'rednecks' as the ultimate, self-sufficient defense force for the US, outperforming the military."
+1942,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor exaggerates the speed and frequency with which Donald Trump's legal cases are being dismissed, including a comedic impression and absurd scenarios like being thrown out of food courts.""
+}
+```",,Humor,['Politics and society'],['Satire'],Yes,Regular Humor,[],,"The humor exaggerates the speed and frequency with which Donald Trump's legal cases are being dismissed, including a comedic impression and absurd scenarios like being thrown out of food courts."
+1943,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Work"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the cynical restaurant staff's reluctance to participate in a gender reveal, leading to a sarcastic and botched reveal using a medium-rare burger.""
+}
+```",,Humor,"['Work', 'Other']","['Irony', 'Satire']",No,Regular Humor,[],,"The humor comes from the cynical restaurant staff's reluctance to participate in a gender reveal, leading to a sarcastic and botched reveal using a medium-rare burger."
+1947,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is explicit and sexual in nature, using innuendo and direct references to sex acts.""
+}
+```",,Humor,['Relationships'],['None of these'],Yes,Regular Humor,[],,"The humor is explicit and sexual in nature, using innuendo and direct references to sex acts."
+1948,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's desensitization to an offensive word (implied to be 'Clanker') due to a child's constant use of it.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Regular Humor,[],,The humor comes from the speaker's desensitization to an offensive word (implied to be 'Clanker') due to a child's constant use of it.
+1950,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the dramatic and exaggerated delivery of 'bad news' about an online video and personal conflict.""
+}
+```",,Humor,['Relationships'],['None of these'],No,Regular Humor,[],,The humor comes from the dramatic and exaggerated delivery of 'bad news' about an online video and personal conflict.
+1951,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from one person trying to convince the other that a child they just discussed being born has rapidly aged through various life stages (school, D1 athlete, 18 years old) within a very short time frame, creating an absurd and confusing situation.""
+}
+```",,Humor,['Family'],['None of these'],No,Regular Humor,[],,"The humor comes from one person trying to convince the other that a child they just discussed being born has rapidly aged through various life stages (school, D1 athlete, 18 years old) within a very short time frame, creating an absurd and confusing situation."
+1952,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a game of 'Never Have I Ever' played with an audience, focusing on relationship-related confessions and reactions.""
+}
+```",,Humor,['Relationships'],['None of these'],Yes,Regular Humor,[],,"The content is a game of 'Never Have I Ever' played with an audience, focusing on relationship-related confessions and reactions."
+1953,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The speaker describes a positive interaction and mentions having a 'really funny video' that someone else wouldn't want them to show, implying humor in the video, but the provided text itself does not contain a joke or humorous element.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The speaker describes a positive interaction and mentions having a 'really funny video' that someone else wouldn't want them to show, implying humor in the video, but the provided text itself does not contain a joke or humorous element."
+1954,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurd and incorrect guesses in a fruit-guessing game, leading to confusion and lighthearted frustration between the participants.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the absurd and incorrect guesses in a fruit-guessing game, leading to confusion and lighthearted frustration between the participants."
+1956,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from playful teasing, exaggeration, and observations about celebrity dominance and fan culture, particularly Taylor Swift's achievements. The joke about Taylor breaking her own record from 'all the way back in 2024' uses irony to highlight her recent success.""
+}
+```",,Humor,['Celebrity and pop culture'],['Irony'],Yes,Regular Humor,[],,"The humor comes from playful teasing, exaggeration, and observations about celebrity dominance and fan culture, particularly Taylor Swift's achievements. The joke about Taylor breaking her own record from 'all the way back in 2024' uses irony to highlight her recent success."
+1957,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Race / Ethnicity""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from comparing a white man's face before dancing to the same face before making a racist comment or during school integration protests.""
+}
+```",,Humor,['Politics and society'],['None of these'],Yes,Dark Humor,['Race / Ethnicity'],3 - Severe,The humor comes from comparing a white man's face before dancing to the same face before making a racist comment or during school integration protests.
+1962,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from adults jokingly interpreting a child's innocent answer about running as 'adult talk' and then humorously asking the child about their rent.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,The humor comes from adults jokingly interpreting a child's innocent answer about running as 'adult talk' and then humorously asking the child about their rent.
+1965,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is subtle, stemming from the unexpected meta-commentary \""Turn the volume up\"" after setting up a direct address to Donald Trump, playing on audience expectations.""
+}
+```",,Humor,['Politics and society'],['Irony'],No,Regular Humor,[],,"The humor is subtle, stemming from the unexpected meta-commentary ""Turn the volume up"" after setting up a direct address to Donald Trump, playing on audience expectations."
+1969,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the self-deprecating comparison of the speaker's subscriber count to a famous YouTuber's, and the unexpected pivot to a direct plea for subscriptions.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Other']",['None of these'],No,Regular Humor,[],,"The humor comes from the self-deprecating comparison of the speaker's subscriber count to a famous YouTuber's, and the unexpected pivot to a direct plea for subscriptions."
+1970,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the chaotic and exaggerated reactions, including profanity, during a video game session.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the chaotic and exaggerated reactions, including profanity, during a video game session."
+1972,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the child's unexpected and slightly absurd explanation of the pelvis's function, specifically the line about 'throwing babies'.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the child's unexpected and slightly absurd explanation of the pelvis's function, specifically the line about 'throwing babies'."
+1973,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the aliens, who are supposed to be dangerous invaders, getting sidetracked by human fashion, petty arguments, and being easily manipulated by a human instigator. It subverts the typical alien invasion trope.""
+}
+```",,Humor,"['Relationships', 'Other']","['Irony', 'Satire']",No,Regular Humor,[],,"The humor comes from the aliens, who are supposed to be dangerous invaders, getting sidetracked by human fashion, petty arguments, and being easily manipulated by a human instigator. It subverts the typical alien invasion trope."
+1976,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The speaker critiques Ben Shapiro/Daily Wire's perceived hypocrisy regarding criticism of America vs. Israel, using rhetorical questions and dramatic exclamations to highlight the point. The humor is derived from this satirical and ironic presentation of the argument.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Regular Humor,[],,"The speaker critiques Ben Shapiro/Daily Wire's perceived hypocrisy regarding criticism of America vs. Israel, using rhetorical questions and dramatic exclamations to highlight the point. The humor is derived from this satirical and ironic presentation of the argument."
+1977,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Satire"",
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor targets the perceived corruption and superficiality of Hollywood awards and the Hollywood Foreign Press.""
+}
+```",,Humor,['Celebrity and pop culture'],"['Satire', 'Irony']",Yes,Regular Humor,[],,The humor targets the perceived corruption and superficiality of Hollywood awards and the Hollywood Foreign Press.
+1979,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family"",
+    ""Work"",
+    ""Money"",
+    ""Crime and law enforcement"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The content consists of several short, rapid-fire jokes, some of which are dark and involve implied violence or murder.""
+}
+```",,Humor,"['Relationships', 'Family', 'Work', 'Money', 'Crime and law enforcement', 'Other']",['Irony'],Yes,Dark Humor,"['Violence / Death', 'Crime']",3 - Severe,"The content consists of several short, rapid-fire jokes, some of which are dark and involve implied violence or murder."
+1981,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""War and conflict""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The content describes a comedian's joke about ending a war by shooting everyone, including women and children, which is presented as hilarious.""
+}
+```",,Humor,['War and conflict'],['None of these'],Yes,Dark Humor,['Violence / Death'],3 - Severe,"The content describes a comedian's joke about ending a war by shooting everyone, including women and children, which is presented as hilarious."
+1983,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content describes a game or challenge where participants guess Jamba Juice flavors. There are no discernible comedic elements.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,The content describes a game or challenge where participants guess Jamba Juice flavors. There are no discernible comedic elements.
+1985,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor satirizes vaccine discussions and anxieties by inventing a dangerous, fictional vaccine with absurd and harmful side effects like expelling black bile and giving away friends' social security numbers.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",Yes,Dark Humor,['Violence / Death'],2 - Moderate,"The humor satirizes vaccine discussions and anxieties by inventing a dangerous, fictional vaccine with absurd and harmful side effects like expelling black bile and giving away friends' social security numbers."
+1987,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""War and conflict"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The comedian satirizes modern sensitivities and the trivialization of historical atrocities by juxtaposing absurd questions about 'Schindler's List' (e.g., 'fat jokes,' 'misgendering') with the horrific reality of the Holocaust.""
+}
+```",,Humor,"['War and conflict', 'Politics and society']","['Irony', 'Satire']",Yes,Dark Humor,"['Violence / Death', 'Other Sensitive Target']",3 - Severe,"The comedian satirizes modern sensitivities and the trivialization of historical atrocities by juxtaposing absurd questions about 'Schindler's List' (e.g., 'fat jokes,' 'misgendering') with the horrific reality of the Holocaust."
+1995,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a sudden, chaotic, and nonsensical interruption about \""healing the mental health\"" and \""socks,\"" followed by the speaker's abrupt reaction and attempt to regain composure. It's an unexpected, absurd moment.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from a sudden, chaotic, and nonsensical interruption about ""healing the mental health"" and ""socks,"" followed by the speaker's abrupt reaction and attempt to regain composure. It's an unexpected, absurd moment."
+1996,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurd, chaotic instructions and commentary, followed by an abrupt and serious advertisement, creating a comedic contrast.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the absurd, chaotic instructions and commentary, followed by an abrupt and serious advertisement, creating a comedic contrast."
+1997,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from an exaggerated observation about the lighting in American fast-food restaurants making customers look 'ugly' compared to the food, and a satirical comment about fast food being 'the last bastion of true democracy'.""
+}
+```",,Humor,"['Politics and society', 'Other']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor comes from an exaggerated observation about the lighting in American fast-food restaurants making customers look 'ugly' compared to the food, and a satirical comment about fast food being 'the last bastion of true democracy'."
+1998,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Celebrity and pop culture"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""A series of rapid-fire jokes, including self-deprecating humor about dating, pop culture preferences, a common debate question, and a backhanded compliment about a celebrity.""
+}
+```",,Humor,"['Relationships', 'Celebrity and pop culture', 'Other']",['Irony'],Yes,Regular Humor,[],,"A series of rapid-fire jokes, including self-deprecating humor about dating, pop culture preferences, a common debate question, and a backhanded compliment about a celebrity."
+1999,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor is present in the speaker's struggle to pronounce 'methodology' and the playful banter about a wrestling match. The segment about 'AIDS' is highly ambiguous and appears to be a non-sequitur or misunderstanding rather than intentional humor, as indicated by the other speaker's confusion.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"Humor is present in the speaker's struggle to pronounce 'methodology' and the playful banter about a wrestling match. The segment about 'AIDS' is highly ambiguous and appears to be a non-sequitur or misunderstanding rather than intentional humor, as indicated by the other speaker's confusion."
+2003,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Race / Ethnicity"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The content is a satirical monologue delivered from the perspective of a bigoted individual, using extreme prejudice against women, black people, and gay people to highlight the absurdity and wrongness of such views. It uses historical references to slavery and civil rights in a twisted, prejudiced manner.""
+}
+```",,Humor,"['Relationships', 'Politics and society', 'Other']","['Irony', 'Satire']",Yes,Dark Humor,"['Gender / Sex related', 'Race / Ethnicity', 'Crime']",3 - Severe,"The content is a satirical monologue delivered from the perspective of a bigoted individual, using extreme prejudice against women, black people, and gay people to highlight the absurdity and wrongness of such views. It uses historical references to slavery and civil rights in a twisted, prejudiced manner."
+2005,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""School"",
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""Satire"",
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Race / Ethnicity"",
+    ""Disability""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor targets perceived liberal hypocrisy and policies. The final line uses a derogatory term ('retarded') to describe political opponents, making it dark humor with a severe intensity due to the use of a slur against people with disabilities.""
+}
+```",,Humor,"['Politics and society', 'School', 'Crime and law enforcement']","['Satire', 'Irony']",Yes,Dark Humor,"['Gender / Sex related', 'Race / Ethnicity', 'Disability']",3 - Severe,"The humor targets perceived liberal hypocrisy and policies. The final line uses a derogatory term ('retarded') to describe political opponents, making it dark humor with a severe intensity due to the use of a slur against people with disabilities."
+2010,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a factual description of a video game's AI, not intended to be humorous.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a factual description of a video game's AI, not intended to be humorous."
+2012,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian satirizes the media's biased portrayal of perpetrators of violence, specifically highlighting the different labels applied based on race/ethnicity (terrorist for Middle Eastern, thug for Black, lone gunman/mentally unstable for White).""
+}
+```",,Humor,"['Politics and society', 'Crime and law enforcement']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The comedian satirizes the media's biased portrayal of perpetrators of violence, specifically highlighting the different labels applied based on race/ethnicity (terrorist for Middle Eastern, thug for Black, lone gunman/mentally unstable for White)."
+2013,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the satirical portrayal of Donald Trump and Vladimir Putin's relationship, with Putin being overly clingy and Trump trying to avoid him. The final line explicitly states the political satire.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Regular Humor,[],,"The humor comes from the satirical portrayal of Donald Trump and Vladimir Putin's relationship, with Putin being overly clingy and Trump trying to avoid him. The final line explicitly states the political satire."
+2016,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the unexpected reveal that the entire heartfelt story about his son was a setup to promote his own book.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Regular Humor,[],,The humor comes from the unexpected reveal that the entire heartfelt story about his son was a setup to promote his own book.
+2018,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's initial false flattery about being a 'huge fan' immediately followed by the admission that they've never heard the show. The joke culminates with the speaker implying that being on the show is a cause for concern for some people.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,The humor comes from the speaker's initial false flattery about being a 'huge fan' immediately followed by the admission that they've never heard the show. The joke culminates with the speaker implying that being on the show is a cause for concern for some people.
+2019,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Ricky Gervais recounts an anecdote about making a joke about Johnny Depp and Angelina Jolie's film at the Golden Globes and Depp's positive reaction to it, despite media reports.""
+}
+```",,Humor,['Celebrity and pop culture'],['Irony'],Yes,Regular Humor,[],,"Ricky Gervais recounts an anecdote about making a joke about Johnny Depp and Angelina Jolie's film at the Golden Globes and Depp's positive reaction to it, despite media reports."
+2020,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor relies heavily on sexual innuendo and double entendres, particularly around the 'in and out' restaurant and 'dry sandwiches' with 'no spit'.""
+}
+```",,Humor,"['Relationships', 'Other']",['None of these'],Yes,Regular Humor,[],,"The humor relies heavily on sexual innuendo and double entendres, particularly around the 'in and out' restaurant and 'dry sandwiches' with 'no spit'."
+2025,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the chaotic chase and the main character's exaggerated obsession with money, even during a proposal and other events.""
+}
+```",,Humor,['Money'],['Satire'],No,Regular Humor,[],,"The humor comes from the chaotic chase and the main character's exaggerated obsession with money, even during a proposal and other events."
+2026,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's mischievous lie about the plot of Old Yeller and the partner's delayed, angry reaction.""
+}
+```",,Humor,"['Relationships', 'Other']",['Irony'],Yes,Regular Humor,[],,"The humor comes from the speaker's mischievous lie about the plot of Old Yeller and the partner's delayed, angry reaction."
+2028,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is a sarcastic comment about the perceived unfairness of asylum seekers being housed in 'luxury' accommodation while 'Indigenous homeless people' are not.""
+}
+```",,Humor,['Politics and society'],['Irony'],No,Regular Humor,[],,The humor is a sarcastic comment about the perceived unfairness of asylum seekers being housed in 'luxury' accommodation while 'Indigenous homeless people' are not.
+2031,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a serious political commentary on taxing the rich and addressing poverty. No humor is present.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,The content is a serious political commentary on taxing the rich and addressing poverty. No humor is present.
+2032,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the exaggerated description of R.F.K. Jr.'s unusual skin color/appearance, comparing him to a 'bruised Blueberry' and someone 'holding his breath for 26 years'.""
+}
+```",,Humor,['Politics and society'],['None of these'],Yes,Regular Humor,[],,"The humor comes from the exaggerated description of R.F.K. Jr.'s unusual skin color/appearance, comparing him to a 'bruised Blueberry' and someone 'holding his breath for 26 years'."
+2033,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the relatable frustration of a mother dealing with public opinion and the impossibility of pleasing everyone regarding her child's appearance. The irony is in the no-win situation she describes.""
+}
+```",,Humor,['Family'],['Irony'],No,Regular Humor,[],,The humor comes from the relatable frustration of a mother dealing with public opinion and the impossibility of pleasing everyone regarding her child's appearance. The irony is in the no-win situation she describes.
+2034,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The speaker tells a humorous story about attending a billionaire's party and then using his streaming service logins, satirizing the ultra-rich and their habits.""
+}
+```",,Humor,"['Money', 'Celebrity and pop culture']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The speaker tells a humorous story about attending a billionaire's party and then using his streaming service logins, satirizing the ultra-rich and their habits."
+2036,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the exaggerated denial of eating donuts despite clear evidence, and the pun 'Bellyverse' at the end.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the exaggerated denial of eating donuts despite clear evidence, and the pun 'Bellyverse' at the end."
+2038,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire"",
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is satirical, presenting an exaggerated and cynical viewpoint of a political party's strategy to gain voters by exploiting non-English speaking immigrants, while also being self-aware of their own perceived flaws. The humor targets political hypocrisy and strategy.""
+}
+```",,Humor,['Politics and society'],"['Satire', 'Irony']",Yes,Regular Humor,[],,"The humor is satirical, presenting an exaggerated and cynical viewpoint of a political party's strategy to gain voters by exploiting non-English speaking immigrants, while also being self-aware of their own perceived flaws. The humor targets political hypocrisy and strategy."
+2040,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor is primarily about the comedian's 'evil laugh' and reactions to it. The dark humor and disability target come from the 'I'm not Helen Keller' joke.""
+}
+```",,Humor,['Other'],['None of these'],Yes,Dark Humor,['Disability'],2 - Moderate,The humor is primarily about the comedian's 'evil laugh' and reactions to it. The dark humor and disability target come from the 'I'm not Helen Keller' joke.
+2041,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from absurd statements, exaggerated advice (especially about cricket), and ironic twists. The 'Other' topic covers the cricket theme and general absurdity.""
+}
+```",,Humor,"['Family', 'Other']",['Irony'],Yes,Regular Humor,[],,"The humor comes from absurd statements, exaggerated advice (especially about cricket), and ironic twists. The 'Other' topic covers the cricket theme and general absurdity."
+2042,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The humor comes from the escalating frustration with someone struggling to read/write numbers, culminating in the punchline that they are not 'retarded' but 'dyslexic'. The use of the term 'retarded' even if immediately corrected, makes it dark humor targeting disability.""
+}
+```",,Humor,['Other'],['Irony'],No,Dark Humor,['Disability'],1 - Mild,"The humor comes from the escalating frustration with someone struggling to read/write numbers, culminating in the punchline that they are not 'retarded' but 'dyslexic'. The use of the term 'retarded' even if immediately corrected, makes it dark humor targeting disability."
+2043,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Race / Ethnicity"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from the speaker's reaction to an ignorant statement about slavery by Jillian Michaels, followed by a dark, hyperbolic joke comparing the methods of 'The Biggest Loser' to slavery.""
+}
+```",,Humor,"['Politics and society', 'Celebrity and pop culture']",['Irony'],Yes,Dark Humor,"['Race / Ethnicity', 'Violence / Death']",3 - Severe,"The humor comes from the speaker's reaction to an ignorant statement about slavery by Jillian Michaels, followed by a dark, hyperbolic joke comparing the methods of 'The Biggest Loser' to slavery."
+2044,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The humor comes from suggestive double entendres about 'tasting' a person, implying both cannibalism and sexual acts, but clearly in a joking context.""
+}
+```",,Humor,['Relationships'],['None of these'],No,Dark Humor,['Violence / Death'],1 - Mild,"The humor comes from suggestive double entendres about 'tasting' a person, implying both cannibalism and sexual acts, but clearly in a joking context."
+2046,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Science and Technology"",
+    ""Money"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian uses irony to point out the absurdity of trying to fix environmental problems on Mars with nuclear warheads while satirizing space tourism and the priorities of billionaires.""
+}
+```",,Humor,"['Money', 'Politics and society']","['Irony', 'Satire']",Yes,Regular Humor,[],,The comedian uses irony to point out the absurdity of trying to fix environmental problems on Mars with nuclear warheads while satirizing space tourism and the priorities of billionaires.
+2049,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's initial excitement to make a joke about an expensive ring turning their finger green, only to realize it was due to their own low iron, followed by a self-deprecating joke about being 'high on iron' and a 'beefed up baddie'.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from the speaker's initial excitement to make a joke about an expensive ring turning their finger green, only to realize it was due to their own low iron, followed by a self-deprecating joke about being 'high on iron' and a 'beefed up baddie'."
+2050,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the unexpected and unhelpful offer of paper towels to someone asking for change or food.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,The humor comes from the unexpected and unhelpful offer of paper towels to someone asking for change or food.
+2051,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the literal interpretation of a 'chocolate cake shake' and the exaggerated description of the resulting drink and the difficulty of consuming it.""
+}
+```",,Humor,['Other'],['None of these'],Yes,Regular Humor,[],,The humor comes from the literal interpretation of a 'chocolate cake shake' and the exaggerated description of the resulting drink and the difficulty of consuming it.
+2052,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a silly food challenge where the speaker has to say 'G'day, mate' increasingly louder, leading to social awkwardness and self-consciousness as other patrons are seated nearby.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from a silly food challenge where the speaker has to say 'G'day, mate' increasingly louder, leading to social awkwardness and self-consciousness as other patrons are seated nearby."
+2053,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a product comparison and promotional video, highlighting improvements to a candy product. There is no discernible humor.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a product comparison and promotional video, highlighting improvements to a candy product. There is no discernible humor."
+2054,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor is satirical and ironic, criticizing the government's handling of the migrant crisis and the perceived absurdity of their solutions. It uses serious allegations of crime (rape, kidnap) to underscore the severity of the situation, leading to dark humor.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",Yes,Dark Humor,"['Violence / Death', 'Crime']",3 - Severe,"The humor is satirical and ironic, criticizing the government's handling of the migrant crisis and the perceived absurdity of their solutions. It uses serious allegations of crime (rape, kidnap) to underscore the severity of the situation, leading to dark humor."
+2057,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Crime and law enforcement"",
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from a casual and somewhat absurd discussion about owning a gun for protection, including a misunderstanding about gun types and ironic comments about its effectiveness and size. The topic of guns and potential violence is treated lightly.""
+}
+```",,Humor,"['Crime and law enforcement', 'Family']",['Irony'],No,Dark Humor,"['Violence / Death', 'Crime']",2 - Moderate,"The humor comes from a casual and somewhat absurd discussion about owning a gun for protection, including a misunderstanding about gun types and ironic comments about its effectiveness and size. The topic of guns and potential violence is treated lightly."
+2058,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from the speaker's exaggerated hatred for a dog and the suggestion of a dark prank involving telling someone their dog died.""
+}
+```",,Humor,['Other'],['None of these'],No,Dark Humor,['Violence / Death'],2 - Moderate,The humor comes from the speaker's exaggerated hatred for a dog and the suggestion of a dark prank involving telling someone their dog died.
+2063,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from absurd imagery (French press full of teeth), self-referential jokes about their show's production, and conversational banter.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from absurd imagery (French press full of teeth), self-referential jokes about their show's production, and conversational banter."
+2066,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a parent's struggle to explain an inappropriate word to a child, and the ironic punchline directed at the other parent.""
+}
+```",,Humor,['Family'],['Irony'],Yes,Regular Humor,[],,"The humor comes from a parent's struggle to explain an inappropriate word to a child, and the ironic punchline directed at the other parent."
+2070,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from an older woman describing the social advantages she experiences due to her age, including getting away with things and receiving chivalrous treatment, while still appreciating attractive men.""
+}
+```",,Humor,"['Relationships', 'Other']",['None of these'],Yes,Regular Humor,[],,"The humor comes from an older woman describing the social advantages she experiences due to her age, including getting away with things and receiving chivalrous treatment, while still appreciating attractive men."
+2072,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor comes from the speaker's comment 'Yo, that would be funny. I wouldn't trust it' in response to a video showing a tsunami reaching a high cliff where a person is, implying a morbid fascination with the extreme danger.""
+}
+```",,Humor,['Other'],['None of these'],No,Dark Humor,['Violence / Death'],2 - Moderate,"The humor comes from the speaker's comment 'Yo, that would be funny. I wouldn't trust it' in response to a video showing a tsunami reaching a high cliff where a person is, implying a morbid fascination with the extreme danger."
+2074,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The content is a satirical impersonation of Donald Trump, making fun of his presidency, family, and controversies, including a reference to the Epstein files.""
+}
+```",,Humor,"['Politics and society', 'Family']",['Satire'],Yes,Dark Humor,"['Violence / Death', 'Crime']",2 - Moderate,"The content is a satirical impersonation of Donald Trump, making fun of his presidency, family, and controversies, including a reference to the Epstein files."
+2075,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated internal monologue about their frustration with disruptive children on a tour.""
+}
+```",,Humor,['Family'],['None of these'],Yes,Regular Humor,[],,The humor comes from the speaker's exaggerated internal monologue about their frustration with disruptive children on a tour.
+2077,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Work"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""A skit where Amy Poehler's character accuses Seth Meyers of 'mansplaining' how to tell a joke, leading to an ironic punchline.""
+}
+```",,Humor,"['Relationships', 'Work', 'Politics and society']","['Irony', 'Satire']",No,Regular Humor,[],,"A skit where Amy Poehler's character accuses Seth Meyers of 'mansplaining' how to tell a joke, leading to an ironic punchline."
+2078,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other"",
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The humor comes from one participant's repeated, out-of-context references to being shot, creating an absurd and unexpected comedic effect in a panel discussion setting. The final jab about rent also adds to the humor.""
+}
+```",,Humor,"['Other', 'Money']",['None of these'],No,Dark Humor,"['Violence / Death', 'Crime']",1 - Mild,"The humor comes from one participant's repeated, out-of-context references to being shot, creating an absurd and unexpected comedic effect in a panel discussion setting. The final jab about rent also adds to the humor."
+2080,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from one person's earnest belief in a clearly fabricated, exaggerated story (the 'Sharkbite Cove' adventure) and the other person's attempts to point out its absurdity. The 'Bite of '87' reference is a nod to the Five Nights at Freddy's lore, adding another layer of absurdity.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from one person's earnest belief in a clearly fabricated, exaggerated story (the 'Sharkbite Cove' adventure) and the other person's attempts to point out its absurdity. The 'Bite of '87' reference is a nod to the Five Nights at Freddy's lore, adding another layer of absurdity."
+2082,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is observational, playing on regional identity and perceived stereotypes of people from New Jersey.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor is observational, playing on regional identity and perceived stereotypes of people from New Jersey."
+2084,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor derived from a frank and playful discussion about masturbation and sexual sensations, with a lighthearted joke about being 'made gay' by the conversation.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"Humor derived from a frank and playful discussion about masturbation and sexual sensations, with a lighthearted joke about being 'made gay' by the conversation."
+2086,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian critiques RFK Jr.'s scientific claims and appearance, and humorously discusses vaccine hesitancy by comparing unknown ingredients to those in store-bought food.""
+}
+```",,Humor,"['Politics and society', 'Other']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The comedian critiques RFK Jr.'s scientific claims and appearance, and humorously discusses vaccine hesitancy by comparing unknown ingredients to those in store-bought food."
+2087,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the comedian's playful interaction with the audience, particularly a young child who calls him 'Mr. Harvey' and is praised for being respectful.""
+}
+```",,Humor,"['Relationships', 'Family']",['None of these'],Yes,Regular Humor,[],,"The humor comes from the comedian's playful interaction with the audience, particularly a young child who calls him 'Mr. Harvey' and is praised for being respectful."
+2090,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Comedian interacts with audience members, making jokes about their responses, names, and age (e.g., a child's sugar intake, a man named Batman, a woman recognizing a Tamagotchi).""
+}
+```",,Humor,['Other'],['None of these'],Yes,Regular Humor,[],,"Comedian interacts with audience members, making jokes about their responses, names, and age (e.g., a child's sugar intake, a man named Batman, a woman recognizing a Tamagotchi)."
+2092,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the relatable awkwardness and panic of meeting a celebrity, resulting in a fumbled interaction.""
+}
+```",,Humor,['Celebrity and pop culture'],['None of these'],No,Regular Humor,[],,"The humor comes from the relatable awkwardness and panic of meeting a celebrity, resulting in a fumbled interaction."
+2094,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Mental Health""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The comedian uses irony and exaggeration to highlight the frustration of waiting for antidepressants to work when one is already depressed, making light of a serious mental health struggle.""
+}
+```",,Humor,['Other'],['Irony'],Yes,Dark Humor,['Mental Health'],2 - Moderate,"The comedian uses irony and exaggeration to highlight the frustration of waiting for antidepressants to work when one is already depressed, making light of a serious mental health struggle."
+2095,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Disability"",
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability"",
+    ""Race / Ethnicity""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The speaker makes chaotic jokes, including about Down syndrome and racism. The statement about not being racist, followed by an excuse, is ironic.""
+}
+```",,Humor,"['Politics and society', 'Other']",['Irony'],No,Dark Humor,"['Disability', 'Race / Ethnicity']",2 - Moderate,"The speaker makes chaotic jokes, including about Down syndrome and racism. The statement about not being racist, followed by an excuse, is ironic."
+2096,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Bill Maher's political commentary, using sarcasm and direct criticism of 'the left' and Democrats, particularly regarding perceived intolerance and snobbery.""
+}
+```",,Humor,"['Politics and society', 'Celebrity and pop culture']","['Irony', 'Satire']",Yes,Regular Humor,[],,"Bill Maher's political commentary, using sarcasm and direct criticism of 'the left' and Democrats, particularly regarding perceived intolerance and snobbery."
+2097,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other"",
+    ""Celebrity and pop culture"",
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The comedian makes several jokes about aging, health, and life expectancy. One joke about a colonoscopy and not expecting to live another ten years is classified as dark humor due to its direct reference to mortality. Irony is used frequently, such as transitioning for longer life expectancy, being a 'gamer' who plays Tic-Tac-Toe, or paying off a student loan at 74.""
+}
+```",,Humor,"['Other', 'Celebrity and pop culture', 'Money']",['Irony'],Yes,Dark Humor,['Violence / Death'],1 - Mild,"The comedian makes several jokes about aging, health, and life expectancy. One joke about a colonoscopy and not expecting to live another ten years is classified as dark humor due to its direct reference to mortality. Irony is used frequently, such as transitioning for longer life expectancy, being a 'gamer' who plays Tic-Tac-Toe, or paying off a student loan at 74."
+2098,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor stems from the villain's escalating, absurdly destructive poisons and his bizarre justifications (e.g., killing 17 whales for accuracy, poisoning the entire earth via sunlight), contrasted with the hero's exasperated moral outrage.""
+}
+```",,Humor,['Other'],['Irony'],No,Dark Humor,"['Violence / Death', 'Crime']",3 - Severe,"The humor stems from the villain's escalating, absurdly destructive poisons and his bizarre justifications (e.g., killing 17 whales for accuracy, poisoning the entire earth via sunlight), contrasted with the hero's exasperated moral outrage."
+2099,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the awkwardness and high stakes of calling an ex-boyfriend for a challenge.""
+}
+```",,Humor,['Relationships'],['None of these'],No,Regular Humor,[],,The humor comes from the awkwardness and high stakes of calling an ex-boyfriend for a challenge.
+2102,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""School""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor critiques the Florida Surgeon General's contradictory and questionable views on public health, using irony (e.g., comparing his cheerful announcement to a pilot announcing dangerous changes) and satire (e.g., the 'Florida textbook' line, and highlighting his hypocrisy regarding parental rights).""
+}
+```",,Humor,"['Politics and society', 'School']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor critiques the Florida Surgeon General's contradictory and questionable views on public health, using irony (e.g., comparing his cheerful announcement to a pilot announcing dangerous changes) and satire (e.g., the 'Florida textbook' line, and highlighting his hypocrisy regarding parental rights)."
+2103,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Mental Health"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor satirizes historical and dismissive attitudes towards mental health issues, using exaggerated and harmful 'advice' from a mother figure. It touches on severe topics like suicidal ideation and violent 'cures'.""
+}
+```",,Humor,"['Family', 'Politics and society']","['Irony', 'Satire']",No,Dark Humor,"['Mental Health', 'Violence / Death']",3 - Severe,"The humor satirizes historical and dismissive attitudes towards mental health issues, using exaggerated and harmful 'advice' from a mother figure. It touches on severe topics like suicidal ideation and violent 'cures'."
+2104,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a rant expressing frustration and xenophobia, not humor.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a rant expressing frustration and xenophobia, not humor."
+2106,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family"",
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian satirizes the perceived detachment of super wealthy parents from mundane tasks like making lunch for their kids, contrasting it with the reality of most parents and his own future aspirations.""
+}
+```",,Humor,"['Family', 'Money']",['Satire'],Yes,Regular Humor,[],,"The comedian satirizes the perceived detachment of super wealthy parents from mundane tasks like making lunch for their kids, contrasting it with the reality of most parents and his own future aspirations."
+2107,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire"",
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Race / Ethnicity""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The comedian uses the historical context of slavery to satirize perceived characteristics of white people, attributing modern, trivial complaints to them in that setting.""
+}
+```",,Humor,['Politics and society'],"['Satire', 'Irony']",Yes,Dark Humor,['Race / Ethnicity'],2 - Moderate,"The comedian uses the historical context of slavery to satirize perceived characteristics of white people, attributing modern, trivial complaints to them in that setting."
+2110,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Gender / Sex related"",
+    ""Race / Ethnicity"",
+    ""Violence / Death"",
+    ""Crime"",
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The speaker uses satire and hyperbole to criticize liberal viewpoints on various sensitive social and political issues, including gender identity, race, immigration, and social justice. The humor is dark due to the aggressive tone and the range of highly controversial topics targeted.""
+}
+```",,Humor,['Politics and society'],['Satire'],Yes,Dark Humor,"['Gender / Sex related', 'Race / Ethnicity', 'Violence / Death', 'Crime', 'Other Sensitive Target']",3 - Severe,"The speaker uses satire and hyperbole to criticize liberal viewpoints on various sensitive social and political issues, including gender identity, race, immigration, and social justice. The humor is dark due to the aggressive tone and the range of highly controversial topics targeted."
+2111,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The speaker reacts to a video (likely wrestling), makes observations about sports, and then a self-deprecating joke about responsibilities.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The speaker reacts to a video (likely wrestling), makes observations about sports, and then a self-deprecating joke about responsibilities."
+2113,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor based on exaggerated boasting about wealth and mocking someone's perceived financial struggles.""
+}
+```",,Humor,['Money'],['None of these'],No,Regular Humor,[],,Humor based on exaggerated boasting about wealth and mocking someone's perceived financial struggles.
+2115,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is ironic and satirical, highlighting the hypocrisy of advocating for free speech while simultaneously calling for the censorship and punishment of specific media outlets.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Regular Humor,[],,"The humor is ironic and satirical, highlighting the hypocrisy of advocating for free speech while simultaneously calling for the censorship and punishment of specific media outlets."
+2116,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from Uncle Roger's exaggerated and critical reaction to Jamie Oliver's incorrect preparation of pho, using cultural commentary, sarcasm, and strong language to satirize celebrity chefs who misrepresent foreign cuisines.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Other']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor comes from Uncle Roger's exaggerated and critical reaction to Jamie Oliver's incorrect preparation of pho, using cultural commentary, sarcasm, and strong language to satirize celebrity chefs who misrepresent foreign cuisines."
+2117,,json_not_found|invalid humor_presence -> defaulted|invalid stand_up -> defaulted|invalid humor_type -> defaulted,Almost or not sure,[],['None of these'],No,None of these,[],,
+2118,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The comedian interacts with an audience member in a wheelchair, making jokes about his accident, disability, and relationship.""
+}
+```",,Humor,"['Relationships', 'Other']",['Irony'],Yes,Dark Humor,['Disability'],2 - Moderate,"The comedian interacts with an audience member in a wheelchair, making jokes about his accident, disability, and relationship."
+2120,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is explicit and self-deprecating, focusing on cosmetic surgery and male anatomy.""
+}
+```",,Humor,['Other'],['None of these'],Yes,Regular Humor,[],,"The humor is explicit and self-deprecating, focusing on cosmetic surgery and male anatomy."
+2122,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""This is a political speech with a serious and defiant tone, not intended to be humorous.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"This is a political speech with a serious and defiant tone, not intended to be humorous."
+2123,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the creator's self-deprecating tone about their chips and a mild, sarcastic jab at Logan Paul and Mr. Beast's products (Feastables and Prime) tasting bad.""
+}
+```",,Humor,['Celebrity and pop culture'],['Irony'],No,Regular Humor,[],,"The humor comes from the creator's self-deprecating tone about their chips and a mild, sarcastic jab at Logan Paul and Mr. Beast's products (Feastables and Prime) tasting bad."
+2125,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""1 - Mild"",
+  ""note"": ""The dark humor comes from the husband's extreme role-play where he claims his wife is dead, leading to an awkward and un-sexy outcome for their attempt to spice up their marriage.""
+}
+```",,Humor,['Relationships'],['Irony'],Yes,Dark Humor,['Violence / Death'],1 - Mild,"The dark humor comes from the husband's extreme role-play where he claims his wife is dead, leading to an awkward and un-sexy outcome for their attempt to spice up their marriage."
+2126,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content appears to be a comedic sketch, featuring a satirical take on public service announcements and an exaggerated confrontation over a relationship.""
+}
+```",,Humor,"['Relationships', 'Politics and society']",['Satire'],No,Regular Humor,[],,"The content appears to be a comedic sketch, featuring a satirical take on public service announcements and an exaggerated confrontation over a relationship."
+2127,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Work"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Mental Health""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor includes sexual innuendo, situational absurdity, gross-out jokes, and dark humor that trivializes traumatic events (being tied up, fighting a psycho) and mental health issues (nervous breakdown) in a work context. The boss's response to a time-off request after such events is ironic.""
+}
+```",,Humor,"['Relationships', 'Work', 'Other']",['Irony'],No,Dark Humor,"['Violence / Death', 'Mental Health']",2 - Moderate,"The humor includes sexual innuendo, situational absurdity, gross-out jokes, and dark humor that trivializes traumatic events (being tied up, fighting a psycho) and mental health issues (nervous breakdown) in a work context. The boss's response to a time-off request after such events is ironic."
+2128,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Work"",
+    ""Relationships"",
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from exaggerating modern technological advancements and the absurdities of contemporary life and careers, such as an 'influence-less influencer' or having a 'plastic wife and styrofoam kids' via AI.""
+}
+```",,Humor,"['Work', 'Relationships', 'Politics and society', 'Other']","['Irony', 'Satire']",Yes,Regular Humor,[],,"The humor comes from exaggerating modern technological advancements and the absurdities of contemporary life and careers, such as an 'influence-less influencer' or having a 'plastic wife and styrofoam kids' via AI."
+2129,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from one person's convincing performance of pretending to be on the phone, leading to another person (Link) genuinely believing he's talking to someone. The line about ignoring his wife adds to the humor.""
+}
+```",,Humor,['Relationships'],['Irony'],No,Regular Humor,[],,"The humor comes from one person's convincing performance of pretending to be on the phone, leading to another person (Link) genuinely believing he's talking to someone. The line about ignoring his wife adds to the humor."
+2133,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's awkwardness and discomfort with the other person's revealing outfit, despite complimenting it.""
+}
+```",,Humor,['Other'],['Irony'],No,Regular Humor,[],,"The humor comes from the speaker's awkwardness and discomfort with the other person's revealing outfit, despite complimenting it."
+2134,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Chaotic and absurd dialogue with exaggerated reactions and non-sequiturs.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,Chaotic and absurd dialogue with exaggerated reactions and non-sequiturs.
+2138,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the elaborate plan (dressing as Shrek) to trick-or-treat at friends' houses to see if they are handing out a specific type of candy (Joy-Ride).""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,The humor comes from the elaborate plan (dressing as Shrek) to trick-or-treat at friends' houses to see if they are handing out a specific type of candy (Joy-Ride).
+2139,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's relatable observation about eating food during an ad for it, and their self-awareness/admission. It's conversational and informal.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the speaker's relatable observation about eating food during an ad for it, and their self-awareness/admission. It's conversational and informal."
+2140,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a serious political discussion about impeachment and the practicalities of achieving it. There is no humor present.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,The content is a serious political discussion about impeachment and the practicalities of achieving it. There is no humor present.
+2141,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""This content is a serious, argumentative monologue discussing social issues related to race, income inequality, and cultural factors. It is not intended to be humorous.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"This content is a serious, argumentative monologue discussing social issues related to race, income inequality, and cultural factors. It is not intended to be humorous."
+2142,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from the host giving an absurdly simplified and flippant 'explainer' of the complex and sensitive history of Palestine, culminating in 'the Jews called shotgun. And that's that, really.'""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Dark Humor,['Violence / Death'],3 - Severe,"The humor comes from the host giving an absurdly simplified and flippant 'explainer' of the complex and sensitive history of Palestine, culminating in 'the Jews called shotgun. And that's that, really.'"
+2144,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Work"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian talks about the difficulties and awkwardness of performing stand-up comedy during the Covid-19 pandemic, including Zoom shows and live shows with 50% capacity.""
+}
+```",,Humor,"['Work', 'Politics and society']",['None of these'],Yes,Regular Humor,[],,"The comedian talks about the difficulties and awkwardness of performing stand-up comedy during the Covid-19 pandemic, including Zoom shows and live shows with 50% capacity."
+2146,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the slightly absurd premise of a game show based on celebrity arrests, trivializing the topic for entertainment.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Crime and law enforcement']",['None of these'],No,Regular Humor,[],,"The humor comes from the slightly absurd premise of a game show based on celebrity arrests, trivializing the topic for entertainment."
+2147,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""School"",
+    ""Crime""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""3 - Severe"",
+  ""note"": ""The humor comes from a student using active shooter drill information to plan an attack on his bullies, creating a dark and ironic scenario.""
+}
+```",,Humor,['School'],['Irony'],No,Dark Humor,"['Violence / Death', 'Crime']",3 - Severe,"The humor comes from a student using active shooter drill information to plan an attack on his bullies, creating a dark and ironic scenario."
+2149,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Work"",
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the chaotic and increasingly drunken atmosphere of a staff holiday party, with various character interactions and one-liners.""
+}
+```",,Humor,"['Work', 'Relationships', 'Other']",['Irony'],No,Regular Humor,[],,"The humor comes from the chaotic and increasingly drunken atmosphere of a staff holiday party, with various character interactions and one-liners."
+2152,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the absurd premise of needing a 'code' for makeup/identity and the exaggerated, repeated threats of 'I will kill you' if the code is forgotten or not known, creating a comedic situation.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the absurd premise of needing a 'code' for makeup/identity and the exaggerated, repeated threats of 'I will kill you' if the code is forgotten or not known, creating a comedic situation."
+2155,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor plays on social distancing and COVID-19 anxieties, ending with an absurd twist about potatoes getting the virus.""
+}
+```",,Humor,['Politics and society'],['None of these'],Yes,Regular Humor,[],,"Humor plays on social distancing and COVID-19 anxieties, ending with an absurd twist about potatoes getting the virus."
+2157,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a serious debate about climate change, renewable energy, and economic policy. No humor is present.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a serious debate about climate change, renewable energy, and economic policy. No humor is present."
+2159,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is subtle and sometimes muddled, with dry sarcasm (e.g., about letting an assistant go after she married Bobby Kennedy) and absurd interjections (e.g., \""put the bear in the trunk\"") within a broader serious discussion.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Politics and society']",['Irony'],No,Regular Humor,[],,"The humor is subtle and sometimes muddled, with dry sarcasm (e.g., about letting an assistant go after she married Bobby Kennedy) and absurd interjections (e.g., ""put the bear in the trunk"") within a broader serious discussion."
+2161,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker's exaggerated dedication to editing all their videos in CapCut, despite the time it takes, and the playful reaction from the other person calling them a 'psychopath' for it.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the speaker's exaggerated dedication to editing all their videos in CapCut, despite the time it takes, and the playful reaction from the other person calling them a 'psychopath' for it."
+2162,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Situational humor derived from exaggerated surprise at physical resemblances between the speakers and their families, and a slightly awkward social interaction around a song.""
+}
+```",,Humor,['Family'],['None of these'],No,Regular Humor,[],,"Situational humor derived from exaggerated surprise at physical resemblances between the speakers and their families, and a slightly awkward social interaction around a song."
+2163,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor is lighthearted and playful, centered around a child, vaccination, and the concept of \""vaccination window genes\"" (clothing designed for easy vaccination access). It's a positive and encouraging interaction.""
+}
+```",,Humor,['Family'],['None of these'],No,Regular Humor,[],,"The humor is lighthearted and playful, centered around a child, vaccination, and the concept of ""vaccination window genes"" (clothing designed for easy vaccination access). It's a positive and encouraging interaction."
+2165,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Crime and law enforcement"",
+    ""Relationships""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death"",
+    ""Crime""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""A comedic sketch where characters casually discuss and interact with crime, murder, and jail, playing serious themes for laughs. The flirting with a 'murder burglar' is particularly ironic.""
+}
+```",,Humor,"['Crime and law enforcement', 'Relationships']","['Irony', 'Satire']",No,Dark Humor,"['Violence / Death', 'Crime']",2 - Moderate,"A comedic sketch where characters casually discuss and interact with crime, murder, and jail, playing serious themes for laughs. The flirting with a 'murder burglar' is particularly ironic."
+2167,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Crime and law enforcement""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the speaker and his friend openly mocking a police officer by playing the 'Bad Boys' theme song, only for the officer to find it amusing and let them off without a ticket, while giving tickets to others who didn't make him laugh.""
+}
+```",,Humor,['Crime and law enforcement'],['Irony'],Yes,Regular Humor,[],,"The humor comes from the speaker and his friend openly mocking a police officer by playing the 'Bad Boys' theme song, only for the officer to find it amusing and let them off without a ticket, while giving tickets to others who didn't make him laugh."
+2169,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The comedian talks about his experience getting US citizenship as an Asian person and the persistent racial/ethnic stereotypes he faces, culminating in an ironic misunderstanding where he is called 'racist'.""
+}
+```",,Humor,"['Politics and society', 'Other']",['Irony'],Yes,Regular Humor,[],,"The comedian talks about his experience getting US citizenship as an Asian person and the persistent racial/ethnic stereotypes he faces, culminating in an ironic misunderstanding where he is called 'racist'."
+2174,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Politics and society"",
+    ""Family"",
+    ""Relationships"",
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Disability"",
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The content features a variety of jokes, including observational humor, satire on celebrity culture and social issues, self-deprecating humor, and a dark joke about an elderly relative's death.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Politics and society', 'Family', 'Relationships', 'Other']","['Irony', 'Satire']",Yes,Dark Humor,"['Disability', 'Violence / Death']",2 - Moderate,"The content features a variety of jokes, including observational humor, satire on celebrity culture and social issues, self-deprecating humor, and a dark joke about an elderly relative's death."
+2176,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Violence / Death""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor satirizes US foreign policy, particularly its history of intervention in other countries, often under the guise of \""bringing freedom,\"" especially when resources are involved. The implication of \""freedom\"" is often linked to conflict or regime change.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",No,Dark Humor,['Violence / Death'],2 - Moderate,"The humor satirizes US foreign policy, particularly its history of intervention in other countries, often under the guise of ""bringing freedom,"" especially when resources are involved. The implication of ""freedom"" is often linked to conflict or regime change."
+2177,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor satirizes a political figure's proposed policy by comparing its convoluted logic to 'crackhead logic'. The speaker uses irony to highlight the absurdity of the plan.""
+}
+```",,Humor,['Politics and society'],"['Irony', 'Satire']",Yes,Regular Humor,[],,The humor satirizes a political figure's proposed policy by comparing its convoluted logic to 'crackhead logic'. The speaker uses irony to highlight the absurdity of the plan.
+2179,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony"",
+    ""Satire""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""The humor satirizes 'woke' culture and the perceived high standards of 'young liberal women' by presenting an absurd scenario where a wedding is called off over a partner's perceived lack of engagement with Black Lives Matter. The punchline 'love isn't blind, it's woke' encapsulates the satirical intent.""
+}
+```",,Humor,"['Relationships', 'Politics and society']","['Irony', 'Satire']",Yes,Dark Humor,['Other Sensitive Target'],2 - Moderate,"The humor satirizes 'woke' culture and the perceived high standards of 'young liberal women' by presenting an absurd scenario where a wedding is called off over a partner's perceived lack of engagement with Black Lives Matter. The punchline 'love isn't blind, it's woke' encapsulates the satirical intent."
+2180,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Politics and society""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a social experiment where the host wears a sombrero and poncho, highlighting the ironic reactions of people who are offended (often non-Mexican) versus those who are not (often Mexican).""
+}
+```",,Humor,['Politics and society'],['Irony'],No,Regular Humor,[],,"The humor comes from a social experiment where the host wears a sombrero and poncho, highlighting the ironic reactions of people who are offended (often non-Mexican) versus those who are not (often Mexican)."
+2181,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Other""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from the exaggerated reactions and language used to describe a strong, possibly noxious, smell from a sealed bottle, with references to its use before lifting weights.""
+}
+```",,Humor,['Other'],['None of these'],No,Regular Humor,[],,"The humor comes from the exaggerated reactions and language used to describe a strong, possibly noxious, smell from a sealed bottle, with references to its use before lifting weights."
+2182,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Family""
+  ],
+  ""rhetorical_device"": [
+    ""Irony""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Humor stems from a child's exaggerated favoritism towards the dad and subtle, often ironic or sarcastic, digs at the mom's abilities in household tasks and cooking.""
+}
+```",,Humor,['Family'],['Irony'],No,Regular Humor,[],,"Humor stems from a child's exaggerated favoritism towards the dad and subtle, often ironic or sarcastic, digs at the mom's abilities in household tasks and cooking."
+2186,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Relationships"",
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""Dialogue from a skit featuring a heated argument and personal insults, escalating from a simple request to use the bathroom.""
+}
+```",,Humor,"['Relationships', 'Money']",['None of these'],No,Regular Humor,[],,"Dialogue from a skit featuring a heated argument and personal insults, escalating from a simple request to use the bathroom."
+2188,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Celebrity and pop culture"",
+    ""Work""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""Regular Humor"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The humor comes from a comedic rivalry and playful insults between two characters, one of whom is Chris Rock, discussing their fame, names, and professional standing in show business.""
+}
+```",,Humor,"['Celebrity and pop culture', 'Work']",['None of these'],No,Regular Humor,[],,"The humor comes from a comedic rivalry and playful insults between two characters, one of whom is Chris Rock, discussing their fame, names, and professional standing in show business."
+2190,"```json
+{
+  ""humor_presence"": ""Humor"",
+  ""joke_topic"": [
+    ""Money""
+  ],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""Yes"",
+  ""humor_type"": ""Dark Humor"",
+  ""target_category"": [
+    ""Other Sensitive Target""
+  ],
+  ""dark_intensity"": ""2 - Moderate"",
+  ""note"": ""Aggressive humor based on boasting about wealth and insulting the listener's perceived lack of money and 'boring' life.""
+}
+```",,Humor,['Money'],['None of these'],Yes,Dark Humor,['Other Sensitive Target'],2 - Moderate,Aggressive humor based on boasting about wealth and insulting the listener's perceived lack of money and 'boring' life.
+2191,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content is a political commentary, expressing strong opinions and criticisms regarding election results and societal views on race and sex. While it uses a sarcastic phrase (\""What a shocker\""), the overall tone is argumentative and serious, not comedic.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content is a political commentary, expressing strong opinions and criticisms regarding election results and societal views on race and sex. While it uses a sarcastic phrase (""What a shocker""), the overall tone is argumentative and serious, not comedic."
+2192,"```json
+{
+  ""humor_presence"": ""Not Humor"",
+  ""joke_topic"": [],
+  ""rhetorical_device"": [
+    ""None of these""
+  ],
+  ""stand_up"": ""No"",
+  ""humor_type"": ""None of these"",
+  ""target_category"": [],
+  ""dark_intensity"": null,
+  ""note"": ""The content describes natural disasters using sensationalist and dramatic language, common in clickbait-style videos, but does not contain clear humorous intent. Phrases like \""iceberg says hi\"" are more for dramatic effect than humor.""
+}
+```",,Not Humor,[],['None of these'],No,None of these,[],,"The content describes natural disasters using sensationalist and dramatic language, common in clickbait-style videos, but does not contain clear humorous intent. Phrases like ""iceberg says hi"" are more for dramatic effect than humor."

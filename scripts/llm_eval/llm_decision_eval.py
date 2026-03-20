@@ -74,11 +74,11 @@ ALLOWED_VALUES = {
 }
 
 MODEL_LIST = [
-    #"deepseek-ai/DeepSeek-V3.1", done
+    #"deepseek-ai/DeepSeek-V3.1",
     #"gemini-3.1-pro-preview",
-    "gemini-2.5-flash"
+    #"gemini-2.5-flash"
     #"gpt-5-mini-2025-08-07", done
-    #"claude-sonnet-4-6", done
+    "claude-sonnet-4-6",
 ]
 
 # -----------------------------
