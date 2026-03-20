@@ -14,9 +14,9 @@ import json
 from pathlib import Path
 from typing import Iterable
 
-DEFAULT_DATASET = Path("unified_dataset.csv")
-DEFAULT_COMMENTS_DIR = Path("comments")
-DEFAULT_OUTPUT = Path("comment_counts_by_video.csv")
+DEFAULT_DATASET = Path("/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv")
+DEFAULT_COMMENTS_DIR = Path("/home/kiwi-pandas/Documents/humor-harm-api/comments")
+DEFAULT_OUTPUT = Path("/home/kiwi-pandas/Documents/humor-harm-api/comment_counts_by_video.csv")
 
 
 def parse_args() -> argparse.Namespace:
