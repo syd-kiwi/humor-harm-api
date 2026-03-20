@@ -39,6 +39,15 @@ python scripts/analyze_hashtags.py unified_dataset.csv --top 30 --output hashtag
 
 By default it scans `description`, `tags`, and `title` columns for hashtag tokens (like `#funny`).
 
+## Downloaded comment counter
+Use `scripts/count_video_comments.py` to count the downloaded comments you currently have for each dataset video:
+
+```bash
+python scripts/count_video_comments.py unified_dataset.csv --output comment_counts_by_video.csv
+```
+
+The script expects a `video_id` column in the dataset and newline-delimited JSON files in `comments/` named like `<video_id>.json`. It prints a dataset-level summary and writes a CSV with one row per video, including whether a local comment file was found.
+
 ## Fill missing YouTube metadata
 Use `scripts/fill_missing_youtube_metadata.py` to backfill missing metadata in `unified_dataset.csv` from the `video_id` column with `yt-dlp`.
 
