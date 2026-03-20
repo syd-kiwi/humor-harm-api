@@ -74,11 +74,11 @@ ALLOWED_VALUES = {
 }
 
 MODEL_LIST = [
-    #"deepseek-ai/DeepSeek-V3.1", done
+    #"deepseek-ai/DeepSeek-V3.1",
     #"gemini-3.1-pro-preview",
-    "gemini-2.5-flash"
+    #"gemini-2.5-flash"
     #"gpt-5-mini-2025-08-07", done
-    #"claude-sonnet-4-6", done
+    "claude-sonnet-4-6",
 ]
 
 # -----------------------------
@@ -594,7 +594,8 @@ def main():
     parser.add_argument("--local_only", default=False, action="store_true")
     parser.add_argument(
         "--dataset_path",
-        default="/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv",
+        #default="/home/kiwi-pandas/Documents/humor-harm-api/unified_dataset.csv",
+        default=r"C:\Users\CS-Admin\Documents\humor-harm-api\unified_dataset.csv",
         help="CSV file with transcript_text and an identifier column (id, video_id, or video).",
     )
     parser.add_argument(
